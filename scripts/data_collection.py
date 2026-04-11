@@ -37,7 +37,7 @@ WB_API_BASE = "https://api.worldbank.org/v2"
 
 # Absolute path relative to this script's location
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_PATH = os.path.join(SCRIPT_DIR, "..", "data", "raw_wdi_merged.csv")
+OUTPUT_PATH = os.path.join(SCRIPT_DIR, "..", "data", "raw", "raw_wdi_merged.csv")
 
 COUNTRY_NAMES = {
     "USA": "United States",

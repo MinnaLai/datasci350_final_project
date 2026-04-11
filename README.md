@@ -11,10 +11,10 @@ This repository contains all code, data, and documentation for our DATASCI 350 f
 ```
 .
 ├── data/
-│   ├── raw_wdi_merged.csv     # Raw download from World Bank API (128 rows, may contain blanks)
-│   ├── cleaned_data.csv       # Cleaned panel dataset (118 rows, no missing values)
-│   ├── raw/                   # Additional raw data (other team members)
-│   └── processed/             # Additional processed data (other team members)
+│   ├── raw/
+│   │   └── raw_wdi_merged.csv     # Raw download from World Bank API (128 rows, may contain blanks)
+│   └── processed/
+│       └── cleaned_data.csv       # Cleaned panel dataset (118 rows, no missing values)
 ├── scripts/
 │   ├── data_collection.py     # Person 1: fetch WDI data from World Bank API
 │   ├── data_cleaning.sql      # Person 1: SQL cleaning script
@@ -64,7 +64,7 @@ pip install requests pandas
 python scripts/data_collection.py
 ```
 
-**Output:** `data/raw_wdi_merged.csv`
+**Output:** `data/raw/raw_wdi_merged.csv`
 - 128 rows (64 per country, years 1960–2023)
 - 7 columns: `country`, `country_code`, `year`, `gdp_per_capita`, `gdp_growth`, `life_expectancy`, `mortality_under5`
 - Blank cells where the World Bank has no data for that indicator-year combination
@@ -83,30 +83,30 @@ python scripts/data_collection.py
 **Using DuckDB (recommended):**
 ```bash
 duckdb
-> CREATE TABLE raw_data AS SELECT * FROM read_csv_auto('data/raw_wdi_merged.csv');
+> CREATE TABLE raw_data AS SELECT * FROM read_csv_auto('data/raw/raw_wdi_merged.csv');
 > .read scripts/data_cleaning.sql
-> COPY cleaned_data TO 'data/cleaned_data.csv' (HEADER, DELIMITER ',');
+> COPY cleaned_data TO 'data/processed/cleaned_data.csv' (HEADER, DELIMITER ',');
 ```
 
 **Using SQLite:**
 ```bash
 sqlite3 project.db
 > .mode csv
-> .import data/raw_wdi_merged.csv raw_data
+> .import data/raw/raw_wdi_merged.csv raw_data
 > .read scripts/data_cleaning.sql
 ```
 
-**Note:** The pre-generated cleaned dataset is already committed at `data/cleaned_data.csv`.
+**Note:** The pre-generated cleaned dataset is already committed at `data/processed/cleaned_data.csv`.
 
 ---
 
-### Cleaned dataset — `data/cleaned_data.csv`
+### Cleaned dataset — `data/processed/cleaned_data.csv`
 
 This is the **primary input for all downstream analysis** by other team members.
 
 | Property | Value |
 |----------|-------|
-| File | `data/cleaned_data.csv` |
+| File | `data/processed/cleaned_data.csv` |
 | Rows | 118 |
 | Columns | 7 |
 | CHN coverage | 1969–2023 (55 years) |
@@ -119,7 +119,7 @@ See [`documentation/codebook.md`](documentation/codebook.md) for full variable d
 
 ## Notes for Other Team Members
 
-- Load `data/cleaned_data.csv` for all analysis — it is fully clean with no missing values.
+- Load `data/processed/cleaned_data.csv` for all analysis — it is fully clean with no missing values.
 - China data begins in **1969** and US data begins in **1961** due to source availability. For a perfectly balanced panel (same years for both countries), subset to **1969–2023**.
-- Do not modify `data/raw_wdi_merged.csv` — it is the unmodified API output and serves as the audit trail.
+- Do not modify `data/raw/raw_wdi_merged.csv` — it is the unmodified API output and serves as the audit trail.
 - See the codebook for data source, units, and all cleaning decisions.
