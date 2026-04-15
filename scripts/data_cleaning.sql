@@ -65,9 +65,9 @@ ORDER BY country_code;
 --   3. Cast columns to appropriate types.
 --   4. Sort by country then year for readability.
 --
--- Result: CHN rows cover 1969-2023 (55 years)
---         USA rows cover 1961-2023 (63 years)
---         Total: 118 rows, zero NULLs
+-- Result: CHN rows cover 1970-2023 (54 years)
+--         USA rows cover 1970-2023 (54 years)
+--         Total: 108 rows, zero NULLs
 
 CREATE TABLE IF NOT EXISTS cleaned_data AS
 SELECT
@@ -85,7 +85,7 @@ WHERE
     AND gdp_growth       IS NOT NULL
     AND life_expectancy  IS NOT NULL
     AND mortality_under5 IS NOT NULL
-    AND year > 0
+    AND year >= 1970
 ORDER BY country_code, year;
 
 

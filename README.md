@@ -107,10 +107,10 @@ This is the **primary input for all downstream analysis** by other team members.
 | Property | Value |
 |----------|-------|
 | File | `data/processed/cleaned_data.csv` |
-| Rows | 118 |
+| Rows | 108 |
 | Columns | 7 |
-| CHN coverage | 1969–2023 (55 years) |
-| USA coverage | 1961–2023 (63 years) |
+| CHN coverage | 1970–2023 (54 years) |
+| USA coverage | 1970–2023 (54 years) |
 | Missing values | 0 |
 
 See [`documentation/codebook.md`](documentation/codebook.md) for full variable descriptions, units, WDI indicator codes, and notes on missing data handling.
@@ -120,6 +120,6 @@ See [`documentation/codebook.md`](documentation/codebook.md) for full variable d
 ## Notes for Other Team Members
 
 - Load `data/processed/cleaned_data.csv` for all analysis — it is fully clean with no missing values.
-- China data begins in **1969** and US data begins in **1961** due to source availability. For a perfectly balanced panel (same years for both countries), subset to **1969–2023**.
+- Both countries share the same year range: **1970–2023 (54 years each, 108 rows total)**.
 - Do not modify `data/raw/raw_wdi_merged.csv` — it is the unmodified API output and serves as the audit trail.
 - See the codebook for data source, units, and all cleaning decisions.
