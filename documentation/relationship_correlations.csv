@@ -1,5 +1,0 @@
-x_variable,y_variable,correlation
-gdp_per_capita,life_expectancy,0.6662306840317314
-gdp_per_capita,mortality_under5,-0.6876390459325908
-gdp_growth,life_expectancy,-0.42256282299320064
-gdp_growth,mortality_under5,0.48147344833340655
