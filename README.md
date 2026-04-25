@@ -1,6 +1,8 @@
 # DATASCI 350 Final Project
 
-## Research Question: Do Improvements in Economic Development Lead to Better Population Health Outcomes in the US vs. China?
+## Research Question: 
+
+Do Improvements in Economic Development Lead to Better Population Health Outcomes in the US vs. China?
 
 ## Project Description
 
