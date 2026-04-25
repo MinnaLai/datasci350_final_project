@@ -159,3 +159,31 @@ Time-series plots were generated using Python to compare trends in life expectan
 ### Figures
 - figures/life_expectancy.png
 - figures/mortality_under5.png
+
+---
+
+## Person 4 — Comparative Analysis
+
+### Objective
+This section compares economic and health indicators between the United States and China, focusing on how the gaps between the two countries have changed over time.
+
+### Methods
+Data for the United States and China were merged by year, and differences (gaps) in GDP per capita and life expectancy were calculated. Time-series plots were used to visualize both direct comparisons and the evolution of these gaps.
+
+### Key Findings
+- GDP per capita remains significantly higher in the United States than in China throughout the entire period.
+- The GDP gap between the two countries increases over time, especially during periods of rapid economic growth.
+- In contrast, the gap in life expectancy steadily decreases over time.
+- China starts with a much lower life expectancy but gradually catches up with the United States.
+- By recent years, the life expectancy gap becomes very small and even briefly reverses.
+
+### Interpretation
+- The results show that economic inequality between the two countries has widened, while health outcomes have become more similar.
+- This suggests that improvements in population health may not depend solely on economic wealth.
+- China’s rapid gains in life expectancy indicate that health outcomes can improve significantly even when economic gaps remain large.
+
+### Figures
+- figures/gdp_comparison.png
+- figures/life_expectancy_comparison.png
+- figures/gdp_gap.png
+- figures/life_gap.png
