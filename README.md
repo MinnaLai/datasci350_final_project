@@ -2,7 +2,11 @@
 
 ## Do Improvements in Economic Development Lead to Better Population Health Outcomes in the US vs. China?
 
-This repository contains all code, data, and documentation for our DATASCI 350 final project comparing economic development and population health outcomes in the **United States** and **China** using World Bank WDI data.
+## Project Description
+
+This project analyzes the relationship between economic development and population health outcomes in the United States and China from 1970 to 2023 using World Bank data.
+
+The analysis focuses on four key indicators: GDP per capita, GDP growth, life expectancy, and under-5 mortality. We examine trends over time, compare differences between countries, and explore relationships between economic and health variables.
 
 ---
 
@@ -28,9 +32,51 @@ This repository contains all code, data, and documentation for our DATASCI 350 f
 │   └── workflow-notes.md
 ├── figures/
 └── project-report.qmd
+└── README.md               # This file  
+
+```
+
+The `figures/` folder contains all visual outputs from the project, including:
+- economic analysis figures (GDP per capita trends, GDP growth trends)  
+- health analysis figures (life expectancy, under-5 mortality)  
+- comparative analysis figures (country comparisons and gaps)  
+- relationship analysis figures (scatter plots between economic and health variables) 
+
+---
+
+## How to Run the Code
+
+Install required packages:
+
+```
+pip install pandas matplotlib
+```
+
+Run the analysis scripts:
+
+```
+python scripts/economic_analysis.py
+python scripts/health_analysis.py
+python scripts/comparative_analysis.py
+python scripts/relationship_analysis.py
+```
+
+Render the final report:
+
+```
+quarto render project-report.qmd
 ```
 
 ---
+
+## Notes
+
+All analysis uses the cleaned dataset located in `data/processed/cleaned_data.csv`.
+
+Figures are automatically saved in the `figures/` folder when scripts are executed.
+
+---
+
 
 ## Person 1 — Data Collection & Cleaning
 
