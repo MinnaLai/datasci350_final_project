@@ -141,3 +141,21 @@ Time-series visualizations were generated using Python (pandas, matplotlib, seab
 
 ---
 
+## Person 3 — Health Analysis
+
+### Objective
+This section analyzes population health outcomes using life expectancy and under-5 mortality rates for the United States and China.
+
+### Methods
+Time-series plots were generated using Python to compare trends in life expectancy and under-5 mortality between the two countries from 1970 to 2023.
+
+### Key Findings
+- Life expectancy increased steadily in both countries over time.
+- China shows a much faster improvement, rising from a lower starting point and nearly converging with the United States in recent years.
+- Under-5 mortality declined significantly in both countries, with a much sharper decrease in China.
+- China started with very high child mortality rates but experienced rapid improvement, especially after the 1980s.
+- The gap in health outcomes between the United States and China has narrowed substantially over time.
+
+### Figures
+- figures/life_expectancy.png
+- figures/mortality_under5.png
