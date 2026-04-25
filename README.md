@@ -187,3 +187,32 @@ Data for the United States and China were merged by year, and differences (gaps)
 - figures/life_expectancy_comparison.png
 - figures/gdp_gap.png
 - figures/life_gap.png
+
+---
+
+## Person 5 — Relationship Analysis
+
+### Objective
+This section explores the relationship between economic development indicators and population health outcomes in the United States and China.
+
+### Methods
+Scatter plots were generated using Python to compare GDP per capita and GDP growth with life expectancy and under-5 mortality. Correlation values were also calculated and saved in the documentation folder.
+
+### Key Findings
+- GDP per capita is positively associated with life expectancy. As GDP per capita increases, life expectancy generally rises.
+- GDP per capita is negatively associated with under-5 mortality. Countries and years with higher GDP per capita tend to have lower child mortality rates.
+- The relationship is especially clear for China, where rapid increases in GDP per capita are linked with large improvements in health outcomes.
+- GDP growth rate shows a weaker and less consistent relationship with health outcomes compared with GDP per capita.
+- These results suggest that long-term economic development, measured by GDP per capita, is more closely related to population health than short-term annual GDP growth.
+
+### Figures
+- figures/gdp_per_capita_vs_life_expectancy.png
+- figures/gdp_per_capita_vs_mortality_under5.png
+- figures/gdp_growth_vs_life_expectancy.png
+- figures/gdp_growth_vs_mortality_under5.png
+
+---
+
+## Summary of Main Findings
+
+Overall, the project shows that economic development and population health outcomes are related, but the relationship is not perfectly direct. The United States maintains a much higher GDP per capita than China, but China experienced faster improvements in life expectancy and under-5 mortality. The comparison suggests that while economic development is associated with better health outcomes, improvements in health can happen rapidly even when large economic gaps remain.
