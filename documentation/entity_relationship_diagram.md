@@ -9,7 +9,7 @@ B[Indicator DataFrames<br/>GDP per capita<br/>GDP growth<br/>Life expectancy<br/
 
 C[raw_wdi_merged.csv<br/>PK: country_code + year]
 
-D[cleaned_data.csv<br/>PK: country_code + year<br/>+ income_tier(derived variable)]
+D[cleaned_data.csv<br/>PK: country_code + year<br/>+ income_tier:derived variable]
 
 E[Analysis Outputs<br/>correlations + figures]
 
