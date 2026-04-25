@@ -75,7 +75,6 @@ quarto render project-report.qmd
 - pandas, matplotlib
 - Quarto (for rendering the report)
 
-
 ---
 
 ## Notes
