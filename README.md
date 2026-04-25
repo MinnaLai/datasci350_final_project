@@ -1,6 +1,6 @@
 # DATASCI 350 Final Project
 
-## Do Improvements in Economic Development Lead to Better Population Health Outcomes in the US vs. China?
+## Research Question: Do Improvements in Economic Development Lead to Better Population Health Outcomes in the US vs. China?
 
 ## Project Description
 
@@ -66,6 +66,15 @@ Render the final report:
 ```
 quarto render project-report.qmd
 ```
+
+---
+
+## Prerequisites
+
+- Python 3.8+
+- pandas, matplotlib
+- Quarto (for rendering the report)
+
 
 ---
 
