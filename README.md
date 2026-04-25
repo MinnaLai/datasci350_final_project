@@ -117,3 +117,27 @@ See [`documentation/codebook.md`](documentation/codebook.md) for full variable d
 - Load `data/processed/cleaned_data.csv` for all analysis — fully clean, zero missing values.
 - Both countries share the same year range: **1970–2023 (54 years each, 108 rows total)**.
 - Do not modify `data/raw/raw_wdi_merged.csv` — it is the unmodified API output and serves as the audit trail.
+
+---
+
+## Person 2 — Economic Analysis
+
+### Objective
+This section analyzes trends in economic development using GDP per capita and GDP growth for the United States and China.
+
+### Methods
+Time-series visualizations were generated using Python (pandas, matplotlib, seaborn) to compare GDP per capita and GDP growth between the two countries from 1970 to 2023. Summary statistics were also computed to provide an overall comparison.
+
+### Key Findings
+- GDP per capita is consistently much higher in the United States than in China throughout the entire period.
+- China shows a significantly faster increase in GDP per capita, especially after the 1980s, reflecting rapid economic growth.
+- Despite this growth, a substantial gap in GDP per capita between the two countries still remains.
+- GDP growth rates in China are generally higher and more volatile, while the United States shows lower but more stable growth.
+- China’s rapid growth suggests a period of economic expansion, whereas the US exhibits a more mature and stable economy.
+
+### Figures
+- figures/gdp_per_capita_trend.png
+- figures/gdp_growth_trend.png
+
+---
+
