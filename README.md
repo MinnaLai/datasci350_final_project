@@ -12,6 +12,21 @@ The analysis focuses on four key indicators: GDP per capita, GDP growth, life ex
 
 ---
 
+## Data Summary
+
+The dataset is constructed from the World Bank World Development Indicators (WDI) and includes annual observations for the United States and China from 1970 to 2023.
+
+It contains four key variables:
+- GDP per capita (constant 2015 USD)
+- GDP growth rate (annual %)
+- Life expectancy at birth (years)
+- Under-5 mortality rate (per 1,000 live births)
+
+The final cleaned dataset contains 108 observations (54 years for each country) with no missing values.
+
+----
+
+
 ## Repository Structure
 
 ```
