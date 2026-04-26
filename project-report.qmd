@@ -116,6 +116,14 @@ This suggests that health outcomes can converge faster than income levels during
 The direct comparison highlights clear structural differences between the two countries. The United States maintains stable and consistently high income levels, while China shows rapid growth and a steep upward trajectory.
 This reflects the contrast between a mature high-income economy and a developing economy undergoing rapid transformation.
 
+#### Life Expectancy Comparison
+
+![](figures/life_expectancy_comparison.png){fig-alt="Line plot directly comparing life expectancy in the United States and China over time"}
+
+The direct comparison of life expectancy shows a clear convergence pattern between the United States and China. While the United States initially had a higher life expectancy, China has experienced steady and continuous improvements over time.
+
+This reinforces the gap analysis, indicating that differences in population health between the two countries have narrowed significantly. Compared to GDP, life expectancy demonstrates a more consistent and faster convergence process.
+
 ### Relationship Analysis
 
 #### Objective
