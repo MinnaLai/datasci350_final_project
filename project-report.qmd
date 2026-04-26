@@ -115,3 +115,39 @@ This suggests that health outcomes can converge faster than income levels during
 ![](figures/gdp_comparison.png){fig-alt="Line plot directly comparing GDP per capita in the United States and China over time"}
 The direct comparison highlights clear structural differences between the two countries. The United States maintains stable and consistently high income levels, while China shows rapid growth and a steep upward trajectory.
 This reflects the contrast between a mature high-income economy and a developing economy undergoing rapid transformation.
+
+### Relationship Analysis
+
+#### Objective
+
+This section examines whether economic development indicators are associated with population health outcomes in the United States and China.
+
+#### GDP per Capita and Life Expectancy
+
+![](figures/relationship_analysis/gdp_per_capita_vs_life_expectancy.png){fig-alt="Scatter plot comparing GDP per capita and life expectancy"}
+
+GDP per capita is positively associated with life expectancy. As GDP per capita increases, life expectancy generally rises. 
+This relationship is especially visible for China, where rapid increases in GDP per capita are linked with large improvements in life expectancy.
+
+#### GDP per Capita and Under-5 Mortality
+
+![](figures/relationship_analysis/gdp_per_capita_vs_mortality_under5.png){fig-alt="Scatter plot comparing GDP per capita and under-5 mortality"}
+
+GDP per capita is negatively associated with under-5 mortality. Countries and years with higher GDP per capita tend to have lower child mortality rates.
+This relationship suggests that long-term economic development is linked to improved child health outcomes.
+
+#### GDP Growth and Life Expectancy
+
+![](figures/relationship_analysis/gdp_growth_vs_life_expectancy.png){fig-alt="Scatter plot comparing GDP growth and life expectancy"}
+
+GDP growth rate shows a weaker and less consistent relationship with life expectancy than GDP per capita. 
+This suggests that short-term annual economic growth is not as directly connected to health outcomes as long-term income level.
+
+#### GDP Growth and Under-5 Mortality
+
+![](figures/relationship_analysis/gdp_growth_vs_mortality_under5.png){fig-alt="Scatter plot comparing GDP growth and under-5 mortality"}
+
+GDP growth rate also shows a weaker relationship with under-5 mortality. 
+While economic growth may contribute to better health over time, annual growth fluctuations do not consistently predict immediate changes in child mortality.
+Overall, the relationship analysis suggests that GDP per capita is more closely related to population health than short-term GDP growth.
+
