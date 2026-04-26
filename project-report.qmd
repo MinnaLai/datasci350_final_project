@@ -95,3 +95,23 @@ China began with much lower life expectancy but experienced faster improvement, 
 Under-5 mortality declined in both countries. The United States began with a relatively low under-5 mortality rate and decreased gradually over time.
 
 China began with a much higher rate but experienced a sharp decline, especially between 1970 and 2010. By 2023, China’s under-5 mortality rate becomes much closer to the level of the United States, indicating substantial improvement in child health outcomes.
+
+### Comparison Analysis
+
+#### GDP per Capita Gap
+
+![](figures/gdp_gap.png){fig-alt="Line plot showing the GDP per capita gap between the United States and China over time"}
+The GDP per capita gap between the United States and China remains large but has gradually decreased over time. China’s rapid economic growth has allowed it to narrow the gap, although the United States continues to maintain a substantial income advantage.
+This result suggests partial economic convergence, but not full convergence.
+
+#### Life Expectancy Gap
+
+![](figures/life_gap.png){fig-alt="Line plot showing the life expectancy gap between the United States and China over time"}
+The life expectancy gap between the United States and China has steadily declined. China’s improvements in population health have allowed it to nearly close the gap with the United States.
+This suggests that health outcomes can converge faster than income levels during development.
+
+#### Direct GDP Comparison
+
+![](figures/gdp_comparison.png){fig-alt="Line plot directly comparing GDP per capita in the United States and China over time"}
+The direct comparison highlights clear structural differences between the two countries. The United States maintains stable and consistently high income levels, while China shows rapid growth and a steep upward trajectory.
+This reflects the contrast between a mature high-income economy and a developing economy undergoing rapid transformation.
