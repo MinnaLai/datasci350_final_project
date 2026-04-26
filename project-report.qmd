@@ -77,3 +77,21 @@ In recent years, China’s growth rate shows a gradual decline, suggesting a tra
 The United States, on the other hand, demonstrates lower but more stable growth, typically ranging between 1% and 5%. Periodic downturns, such as those observed around the 2008 financial crisis and the 2020 pandemic, highlight its sensitivity to global economic shocks. However, the overall stability reflects a resilient and diversified economic structure.
 
 The contrast between the two countries illustrates a key economic principle: developing economies tend to grow faster but with greater volatility, while advanced economies experience slower but more stable growth. This difference has important implications for population health, as economic stability may support consistent investment in healthcare systems, while rapid growth may enable large improvements but also introduce short-term disparities.
+
+### Health Analysis
+
+#### Life Expectancy Trends
+
+![](figures/life_expectancy.png){fig-alt="Line plot of life expectancy trends in the United States and China over time"}
+
+Life expectancy increased in both countries over time. The United States began at a higher level and increased gradually, although the trend becomes flatter in recent years, with a slight decline around 2020.
+
+China began with much lower life expectancy but experienced faster improvement, especially from the 1970s through the early 2000s. By the most recent years, China’s life expectancy nearly converges with that of the United States. This suggests major improvements in population health during China’s period of economic and social development.
+
+#### Under-5 Mortality Trends
+
+![](figures/mortality_under5.png){fig-alt="Line plot of under-5 mortality rates in the United States and China over time"}
+
+Under-5 mortality declined in both countries. The United States began with a relatively low under-5 mortality rate and decreased gradually over time.
+
+China began with a much higher rate but experienced a sharp decline, especially between 1970 and 2010. By 2023, China’s under-5 mortality rate becomes much closer to the level of the United States, indicating substantial improvement in child health outcomes.
