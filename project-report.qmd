@@ -1,0 +1,27 @@
+---
+title: "Do Improvements in Economic Development Lead to Better Population Health Outcomes in the US vs. China?"
+
+author:
+  - name: "Fei Yi"
+    affiliation: "Emory University"
+    id: "2609012"
+  - name: "Sarah Shao"
+    affiliation: "Emory University"
+    id: "2608499"
+  - name: "Serena Gu"
+    affiliation: "Emory University"
+    id: "2609244"
+  - name: "Tianyi Grace Zhou"
+    affiliation: "Emory University"
+    id: "2644924"
+  - name: "Minna Lai"
+    affiliation: "Emory University"
+    id: "2599976"
+
+format:
+  html:
+    toc: true
+    number-sections: true
+  pdf:
+    documentclass: article
+---
