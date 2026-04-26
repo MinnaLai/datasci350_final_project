@@ -151,3 +151,37 @@ GDP growth rate also shows a weaker relationship with under-5 mortality.
 While economic growth may contribute to better health over time, annual growth fluctuations do not consistently predict immediate changes in child mortality.
 Overall, the relationship analysis suggests that GDP per capita is more closely related to population health than short-term GDP growth.
 
+## Results and Discussion
+
+The comparison between the United States and China reveals that economic and health indicators do not converge at the same pace. Over the past several decades, China has experienced rapid economic growth, reflected in both its high GDP growth rates and the substantial increase in GDP per capita. Although the gap in GDP per capita between the two countries has narrowed significantly, it remains large. The United States continues to maintain a much higher income level, indicating that while China is catching up, full economic convergence has not yet been achieved.
+
+Examining GDP growth trends provides further insight into the development patterns of the two countries. China exhibits consistently higher but more volatile growth rates, especially during the 1980s through the early 2000s, reflecting a period of rapid industrialization and economic reform. In contrast, the United States shows lower but more stable growth, typically within a narrower range. Periods of economic downturn, such as the 2008 financial crisis and the 2020 COVID-19 pandemic, are more clearly visible in the U.S. data, highlighting differences in economic structure and resilience between a mature and a developing economy.
+
+In terms of health outcomes, a different pattern emerges. China shows strong improvement in key health indicators, including rising life expectancy and sharply declining under-5 mortality rates. These trends suggest that population health in China has improved at a faster pace than income growth alone would predict. Meanwhile, the United States starts from a higher baseline and shows more gradual improvements over time. The faster convergence in health outcomes compared to income suggests that health improvements can occur even when economic gaps persist.
+
+The relationship analysis between economic and health indicators further supports these observations. GDP per capita appears to have a strong and consistent association with better health outcomes. Higher income levels are linked to longer life expectancy and lower child mortality, likely due to improved access to healthcare, better nutrition, and enhanced living conditions. On the other hand, GDP growth rates do not show a similarly strong or stable relationship with health indicators. This suggests that short-term economic fluctuations are less important than sustained long-term development in shaping population health.
+
+These findings imply that economic development contributes to health improvements primarily through structural and long-term changes rather than temporary increases in growth. Investments in infrastructure, education, and healthcare systems—often associated with rising income levels—play a critical role in improving population health. The contrast between the United States and China highlights how different development stages influence both economic dynamics and health outcomes.
+
+However, several limitations should be considered when interpreting these results. First, this analysis focuses on only two countries, which limits the generalizability of the findings. Other countries may exhibit different patterns depending on their economic structure, policy environment, and social conditions. Second, the analysis is based on observational data and identifies correlations rather than causal relationships. It is therefore not possible to conclude that economic growth directly causes improvements in health outcomes.
+
+In addition, important variables that may influence health outcomes are not explicitly included in this analysis. Factors such as healthcare access, public health policy, environmental quality, education levels, and demographic changes (such as aging populations) can all play significant roles. Data limitations, including potential measurement errors or differences in reporting standards across countries, may also affect the results.
+
+Overall, while the findings provide strong evidence of a relationship between economic development and population health, they also highlight the complexity of this relationship. Future research could extend this analysis by including more countries, incorporating additional variables, and applying causal inference methods to better understand the mechanisms linking economic and health outcomes.
+
+## Conclusion
+
+This project analyzes the relationship between economic development and population health outcomes by comparing the United States and China over time.
+
+The results show clear differences in economic patterns. The United States maintains consistently high income levels with relatively stable growth, while China experiences rapid economic expansion, gradually narrowing the income gap. However, despite this progress, a substantial difference in GDP per capita remains.
+
+In contrast, health outcomes show stronger convergence. Life expectancy in China has increased significantly and is now close to that of the United States, while under-5 mortality has declined sharply. These findings suggest that improvements in population health can occur more rapidly than increases in income.
+
+The relationship analysis further supports this conclusion. GDP per capita is strongly associated with better health outcomes, including higher life expectancy and lower child mortality. However, short-term GDP growth appears to have a weaker and less consistent relationship with health indicators.
+
+Overall, the results indicate that long-term economic development plays an important role in improving population health, but the relationship is not uniform across all indicators. Health improvements may occur faster due to targeted policies, public health investments, and social development.
+
+These findings highlight the importance of considering multiple dimensions of development when evaluating progress across countries.
+
+
+
