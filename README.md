@@ -8,7 +8,9 @@ Do Improvements in Economic Development Lead to Better Population Health Outcome
 
 This project analyzes the relationship between economic development and population health outcomes in the United States and China from 1970 to 2023 using World Bank data.
 
-The analysis focuses on four key indicators: GDP per capita, GDP growth, life expectancy, and under-5 mortality. We examine trends over time, compare differences between countries, and explore relationships between economic and health variables.
+The analysis focuses on four key indicators: GDP per capita, GDP growth, life expectancy, and under-5 mortality. 
+
+We examine trends over time, compare differences between countries, and explore relationships between economic and health variables.
 
 ---
 
@@ -34,20 +36,27 @@ The final cleaned dataset contains 108 observations (54 years for each country) 
 ├── data/
 │   ├── raw/
 │   │   └── raw_wdi_merged.csv       # Raw WDI API download (108 rows, 1970–2023)
-│   └── processed/
-│       └── cleaned_data.csv         # Cleaned panel dataset (108 rows, no missing values)
+│   ├── processed/
+│   │   └── cleaned_data.csv         # Cleaned panel dataset (108 rows, no missing values)│ 
+│    └── .DS_Store
 ├── scripts/
 │   ├── data_collection.py           # Person 1: fetch WDI data from World Bank API
 │   ├── data_cleaning.sql            # Person 1: SQL cleaning script
 │   ├── economic_analysis.py
 │   ├── health_analysis.py
-│   ├── comparative_analysis.py
+│   ├── comparison_analysis.py
 │   └── relationship_analysis.py
 ├── documentation/
 │   ├── codebook.md                  # Variable definitions, units, coverage, cleaning notes
 │   └── entity-relationship-diagram.md
 ├── figures/
-└── project-report.qmd
+│    ├── economic_analysis
+│    ├── health_analysis
+│    ├── comparasion_analysis
+│    └── relationship_analysis
+└── .DS_Store
+└── .gitignore
+└── project-report.qmd               #Quarto
 └── README.md                        # This file  
 
 ```
@@ -102,7 +111,7 @@ Figures are automatically saved in the `figures/` folder when scripts are execut
 ---
 
 
-## Person 1 — Data Collection & Cleaning
+## Data Collection & Cleaning
 
 ### Indicators collected
 
@@ -138,7 +147,7 @@ python scripts/data_collection.py
 
 ---
 
-### Step 2 — Run the SQL cleaning script
+### Run the SQL cleaning script
 
 `scripts/data_cleaning.sql` performs data cleaning using standard SQL. It:
 - Filters to only USA and CHN rows
@@ -190,7 +199,7 @@ See [`documentation/codebook.md`](documentation/codebook.md) for full variable d
 
 ---
 
-## Person 2 — Economic Analysis
+## Economic Analysis
 
 This script analyzes economic development trends in the United States and China using GDP per capita and GDP growth rate.
 
@@ -211,7 +220,7 @@ python scripts/economic_analysis.py
 
 ---
 
-## Person 3 — Health Analysis
+## Health Analysis
 
 This script analyzes population health trends in the United States and China using life expectancy and under-5 mortality.
 
@@ -232,7 +241,7 @@ python scripts/health_analysis.py
 
 ---
 
-## Person 4 — Comparative Analysis
+## Comparative Analysis
 
 This script compares economic and health indicators between the United States and China by calculating differences over time.
 
@@ -257,7 +266,7 @@ python scripts/comparative_analysis.py
 
 ---
 
-## Person 5 — Relationship Analysis
+## Relationship Analysis
 
 This script explores relationships between economic and health variables using correlation analysis and scatter plots.
 
