@@ -12,6 +12,21 @@ The analysis focuses on four key indicators: GDP per capita, GDP growth, life ex
 
 ---
 
+## Data Summary
+
+The dataset is constructed from the World Bank World Development Indicators (WDI) and includes annual observations for the United States and China from 1970 to 2023.
+
+It contains four key variables:
+- GDP per capita (constant 2015 USD)
+- GDP growth rate (annual %)
+- Life expectancy at birth (years)
+- Under-5 mortality rate (per 1,000 live births)
+
+The final cleaned dataset contains 108 observations (54 years for each country) with no missing values.
+
+----
+
+
 ## Repository Structure
 
 ```
@@ -177,8 +192,6 @@ See [`documentation/codebook.md`](documentation/codebook.md) for full variable d
 
 ## Person 2 — Economic Analysis
 
-## Person 2 — Economic Analysis
-
 This script analyzes economic development trends in the United States and China using GDP per capita and GDP growth rate.
 
 ### What this script does
@@ -200,8 +213,6 @@ python scripts/economic_analysis.py
 
 ## Person 3 — Health Analysis
 
-## Person 3 — Health Analysis
-
 This script analyzes population health trends in the United States and China using life expectancy and under-5 mortality.
 
 ### What this script does
@@ -220,8 +231,6 @@ python scripts/health_analysis.py
 - figures/mortality_under5.png
 
 ---
-
-## Person 4 — Comparative Analysis
 
 ## Person 4 — Comparative Analysis
 
@@ -250,8 +259,6 @@ python scripts/comparative_analysis.py
 
 ## Person 5 — Relationship Analysis
 
-## Person 5 — Relationship Analysis
-
 This script explores relationships between economic and health variables using correlation analysis and scatter plots.
 
 ### What this script does
@@ -273,9 +280,3 @@ python scripts/relationship_analysis.py
 - figures/gdp_per_capita_vs_mortality_under5.png
 - figures/gdp_growth_vs_life_expectancy.png
 - figures/gdp_growth_vs_mortality_under5.png
-
----
-
-## Summary of Main Findings
-
-Overall, the project shows that economic development and population health outcomes are related, but the relationship is not perfectly direct. The United States maintains a much higher GDP per capita than China, but China experienced faster improvements in life expectancy and under-5 mortality. The comparison suggests that while economic development is associated with better health outcomes, improvements in health can happen rapidly even when large economic gaps remain.
