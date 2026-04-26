@@ -8,24 +8,38 @@
 
 ---
 
-## Data Pipeline
+## Data Pipeline Overview
 
-This project follows a standard data pipeline:
-- raw downloaded data is stored in `data/raw/`
-- cleaned analysis-ready data is stored in `data/processed/`
+This project follows a structured data workflow:
+
+- Raw data is collected via the World Bank API and stored in `data/raw/`
+- Data cleaning and transformation are performed using SQL (DuckDB)
+- Final analysis-ready data is saved in `data/processed/`
+
+This pipeline ensures reproducibility and consistency across all analyses.
+---
+
+## Data Processing Notes
+
+During preprocessing, the dataset was reshaped into a long-format panel structure to support time-series and comparative analysis. 
+
+Additional filtering steps ensured that only observations with complete data across all selected indicators were retained. This allows consistent comparison across variables without introducing bias from missing values.
+
+All transformations were performed using SQL (DuckDB), ensuring transparency and reproducibility.
 
 ---
 
-## Dataset Files
+## Dataset Summary
 
 | File | Description | Rows | Columns |
 |------|-------------|------|---------|
-| `data/raw/raw_wdi_merged.csv` | Raw merged download containing all available years and indicators; may include missing values | 128 | 7 |
-| `data/processed/cleaned_data.csv` | Cleaned panel dataset with no missing values across all selected indicators | 118 | 7 |
+| `data/raw/raw_wdi_merged.csv` | Raw dataset including all retrieved indicators and years, may contain missing values | 128 | 7 |
+| `data/processed/cleaned_data.csv` | Cleaned dataset filtered to include only complete observations across all indicators | 118 | 7 |
 
 ---
 
-## Variables
+## Variable Definitions
+
 
 ### `country`
 - **Type:** String
@@ -138,3 +152,17 @@ duckdb
 > CREATE TABLE raw_data AS SELECT * FROM read_csv_auto('data/raw/raw_wdi_merged.csv');
 > .read scripts/data_cleaning.sql
 > COPY cleaned_data TO 'data/processed/cleaned_data.csv' (HEADER, DELIMITER ',');
+
+---
+
+
+## Analytical Use Cases
+
+This dataset is designed to support multiple types of analysis, including:
+
+- Time-series trend analysis of economic and health indicators  
+- Cross-country comparison between developed and developing economies  
+- Gap analysis to examine convergence or divergence over time  
+- Basic correlation analysis between economic development and health outcomes  
+
+These use cases guided the selection of variables and the structure of the cleaned dataset.
