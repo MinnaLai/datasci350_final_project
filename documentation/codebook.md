@@ -45,6 +45,8 @@ All transformations were performed using SQL (DuckDB), ensuring transparency and
 - **Type:** String
 - **Description:** Full country name
 - **Values:** `China`, `United States`
+- **Notes:** Used for grouping and comparison in all analyses.
+
 
 ### `country_code`
 - **Type:** String (ISO 3166-1 alpha-3)
@@ -54,6 +56,7 @@ All transformations were performed using SQL (DuckDB), ensuring transparency and
 ### `year`
 - **Type:** Integer
 - **Description:** Calendar year of observation
+- **Values:** `CHN`, `USA`
 - **Coverage (raw):** 1960–2023
 - **Coverage (cleaned):** CHN: 1969–2023; USA: 1961–2023
 
@@ -86,8 +89,8 @@ All transformations were performed using SQL (DuckDB), ensuring transparency and
 - **Description:** The probability (expressed per 1,000 live births) that a newborn baby will die before reaching age 5, subject to current age-specific mortality rates.
 - **Interpretation:** Lower values indicate better child health outcomes.
 - **Missing values in raw data:** CHN has no data before 1969; USA has full coverage from 1960.
+- **Analytical Use:** Complements life expectancy by capturing early-life health conditions and is particularly sensitive to healthcare access and public health interventions.
 
----
 
 ## Countries Included
 
