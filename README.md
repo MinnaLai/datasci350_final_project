@@ -38,13 +38,6 @@ The final cleaned dataset contains 108 observations (54 years for each country) 
 │   │   └── raw_wdi_merged.csv       # Raw WDI API download (108 rows, 1970–2023)
 │   └── processed/
 │   │   └── cleaned_data.csv         # Cleaned panel dataset (108 rows, no missing values)
-├── scripts/
-│   ├── data_collection.py           # Fetch WDI data from World Bank API
-│   ├── data_cleaning.sql            # SQL cleaning script
-│   ├── economic_analysis.py
-│   ├── health_analysis.py
-│   ├── comparison_analysis.py
-│   └── relationship_analysis.py
 ├── documentation/
 │   ├── codebook.md                  # Variable definitions, units, coverage, cleaning notes
 │   └── entity-relationship-diagram.md
@@ -53,7 +46,16 @@ The final cleaned dataset contains 108 observations (54 years for each country) 
 │    ├── health_analysis/
 │    ├── comparison_analysis/
 │    └── relationship_analysis/
+├── scripts/
+│   ├── data_collection.py           # Fetch WDI data from World Bank API
+│   ├── data_cleaning.sql            # SQL cleaning script
+│   ├── economic_analysis.py
+│   ├── health_analysis.py
+│   ├── comparison_analysis.py
+│   └── relationship_analysis.py
 └── .gitignore
+└── project-report.html
+└── project-report.pdf
 └── project-report.qmd               # Quarto
 └── README.md                        
 
