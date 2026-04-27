@@ -112,7 +112,7 @@ Under-5 mortality declines significantly in both countries, but the reduction is
 
 ![](figures/comparison_analysis/gdp_gap.png){fig-alt="Line plot showing the GDP per capita gap between the United States and China over time"}
 
-![](figures/comparison_analysis/life_expectancy_comparison.png){fig-alt="Line plot showing the life expectancy gap between the United States and China over time"}
+![](figures/comparison_analysis/life_gap.png){fig-alt="Line plot showing the life expectancy gap between the United States and China over time"}
 
 :::
 
