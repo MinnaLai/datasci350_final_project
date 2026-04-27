@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Fei Yi">
+<meta name="author" content="Sarah Shao">
+<meta name="author" content="Serena Gu">
+<meta name="author" content="Tianyi Grace Zhou">
+<meta name="author" content="Minna Lai">
+
+<title>Do Improvements in Economic Development Lead to Better Population Health Outcomes in the US vs.&nbsp;China?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="project-report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="project-report_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="project-report_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="project-report_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="project-report_files/libs/quarto-html/popper.min.js"></script>
+<script src="project-report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="project-report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="project-report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="project-report_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="project-report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="project-report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="project-report_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description"><span class="header-section-number">2</span> Data Description</a></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis"><span class="header-section-number">3</span> Data Analysis</a>
+  <ul class="collapse">
+  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">3.1</span> Summary Statistics</a></li>
+  <li><a href="#economic-analysis" id="toc-economic-analysis" class="nav-link" data-scroll-target="#economic-analysis"><span class="header-section-number">3.2</span> Economic Analysis</a></li>
+  <li><a href="#health-analysis" id="toc-health-analysis" class="nav-link" data-scroll-target="#health-analysis"><span class="header-section-number">3.3</span> Health Analysis</a></li>
+  <li><a href="#comparison-analysis" id="toc-comparison-analysis" class="nav-link" data-scroll-target="#comparison-analysis"><span class="header-section-number">3.4</span> Comparison Analysis</a></li>
+  <li><a href="#relationship-analysis" id="toc-relationship-analysis" class="nav-link" data-scroll-target="#relationship-analysis"><span class="header-section-number">3.5</span> Relationship Analysis</a></li>
+  </ul></li>
+  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion"><span class="header-section-number">4</span> Results and Discussion</a>
+  <ul class="collapse">
+  <li><a href="#economic-gaps-remain-large" id="toc-economic-gaps-remain-large" class="nav-link" data-scroll-target="#economic-gaps-remain-large"><span class="header-section-number">4.1</span> Economic gaps remain large</a></li>
+  <li><a href="#health-outcomes-converge-faster-than-income" id="toc-health-outcomes-converge-faster-than-income" class="nav-link" data-scroll-target="#health-outcomes-converge-faster-than-income"><span class="header-section-number">4.2</span> Health outcomes converge faster than income</a></li>
+  <li><a href="#relationship-between-economic-development-and-health" id="toc-relationship-between-economic-development-and-health" class="nav-link" data-scroll-target="#relationship-between-economic-development-and-health"><span class="header-section-number">4.3</span> Relationship between economic development and health</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="header-section-number">4.4</span> Limitations</a></li>
+  <li><a href="#overall-interpretation" id="toc-overall-interpretation" class="nav-link" data-scroll-target="#overall-interpretation"><span class="header-section-number">4.5</span> Overall interpretation</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">5</span> Conclusion</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="project-report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Do Improvements in Economic Development Lead to Better Population Health Outcomes in the US vs.&nbsp;China?</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Fei Yi </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Emory University
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Sarah Shao </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Emory University
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Serena Gu </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Emory University
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Tianyi Grace Zhou </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Emory University
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Minna Lai </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Emory University
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>Economic development and population health are closely interconnected. As countries grow economically, improvements in income, infrastructure, and public services may contribute to better health outcomes. However, the extent and timing of these improvements can differ across countries depending on their stage of development.</p>
+<p>This project examines whether improvements in economic development lead to better population health outcomes by comparing the United States and China. The United States represents a mature, high-income economy with stable growth, while China represents a rapidly developing economy that has undergone significant transformation over recent decades.</p>
+<p>Using data from the World Bank World Development Indicators (WDI), we analyze key economic indicators (GDP per capita and GDP growth) alongside health indicators (life expectancy and under-5 mortality rate). By comparing trends over time, we aim to understand how economic development is associated with changes in population health.</p>
+<p>The analysis is organized into several sections. First, we examine economic trends, followed by health outcomes. We then directly compare the two countries and explore the relationship between economic indicators and health outcomes.</p>
+</section>
+<section id="data-description" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data-description"><span class="header-section-number">2</span> Data Description</h2>
+<p>This project uses data from the World Bank World Development Indicators (WDI) database, which provides standardized economic and social indicators across countries and over time. The WDI dataset covers more than 200 countries and spans from 1960 to recent years, making it suitable for analyzing long-term trends and cross-country comparisons.</p>
+<p>We focus on two countries, the United States (USA) and China (CHN), and select four indicators that capture both economic development and population health outcomes. For economic development, we use GDP per capita (constant 2015 US$) and GDP growth (annual %). For health outcomes, we use life expectancy at birth (years) and the under-5 mortality rate (per 1,000 live births). These indicators allow us to examine how economic changes relate to improvements in population health over time.</p>
+<p>The data was retrieved directly from the World Bank API using Python. Each indicator was initially downloaded separately and then merged into a unified dataset based on country and year. After merging, we obtained a panel-style dataset where each row represents a country-year observation and each column corresponds to one of the selected indicators.</p>
+<p>Data cleaning was performed using SQL to ensure consistency and usability for further analysis. The cleaning process included selecting relevant columns, filtering the dataset to include only the United States and China, standardizing variable names, and converting all indicator values into numeric formats. We also checked for missing values and focused on the overlapping time period where all four indicators are available, in order to maintain comparability across variables.</p>
+<p>The final dataset contains the following key variables: country, country_code, year, gdp_per_capita, gdp_growth, life_expectancy, and mortality_under5. Each variable is defined according to the original WDI indicator specifications, with units preserved (e.g., constant USD for GDP per capita and years for life expectancy). This cleaned dataset serves as the foundation for all subsequent analysis in the project.</p>
+</section>
+<section id="data-analysis" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="data-analysis"><span class="header-section-number">3</span> Data Analysis</h2>
+<p>This section presents four parts of the analysis. First, the economic analysis compares GDP per capita and GDP growth trends. Second, the health analysis compares life expectancy and under-5 mortality. Third, the comparison analysis examines cross-country gaps over time. Finally, the relationship analysis explores whether economic indicators are associated with health outcomes.</p>
+<section id="summary-statistics" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="summary-statistics"><span class="header-section-number">3.1</span> Summary Statistics</h3>
+<div id="acf37bfd" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">gdp_per_capita</th>
+<th data-quarto-table-cell-role="th">gdp_growth</th>
+<th data-quarto-table-cell-role="th">life_expectancy</th>
+<th data-quarto-table-cell-role="th">mortality_under5</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">China</th>
+<td>3442.07</td>
+<td>8.73</td>
+<td>70.12</td>
+<td>42.86</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">United States</th>
+<td>43744.02</td>
+<td>2.75</td>
+<td>75.85</td>
+<td>11.02</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>The table summarizes average economic and health indicators for the United States and China over the study period. The United States has a substantially higher average GDP per capita, while China exhibits a higher average GDP growth rate. In terms of health outcomes, China has made significant progress, with increases in life expectancy and reductions in under-5 mortality, narrowing the gap with the United States.</p>
+</section>
+<section id="economic-analysis" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="economic-analysis"><span class="header-section-number">3.2</span> Economic Analysis</h3>
+<section id="gdp-per-capita-trends" class="level4" data-number="3.2.1">
+<h4 data-number="3.2.1" class="anchored" data-anchor-id="gdp-per-capita-trends"><span class="header-section-number">3.2.1</span> GDP per Capita Trends</h4>
+<p><img src="figures/economic_analysis/gdp_per_capita_trend.png" class="img-fluid" alt="Line plot of GDP per capita trends in the United States and China over time"></p>
+<p>GDP per capita in the United States remains substantially higher than in China throughout the study period, reflecting its long-established status as a high-income economy. The steady upward trend suggests sustained economic growth supported by stable institutions, advanced technology, and mature markets.</p>
+<p>In contrast, China begins from a much lower baseline but experiences rapid and continuous increases, particularly after the 1990s. This sharp rise corresponds to major economic reforms, globalization, and industrialization, which significantly accelerated China’s economic development.</p>
+<p>Although China has narrowed the income gap over time, a substantial difference in GDP per capita persists by the end of the period. This indicates that while developing economies can grow quickly, convergence toward high-income levels is gradual and may take decades. The observed pattern highlights different stages of economic development and suggests that absolute income levels still differ significantly despite similar growth momentum.</p>
+<p>From a broader perspective, higher GDP per capita implies greater access to healthcare, education, and public services, which are important determinants of population health. Therefore, the persistent income gap may help explain differences in health outcomes between the two countries.</p>
+</section>
+<section id="gdp-growth-trends" class="level4" data-number="3.2.2">
+<h4 data-number="3.2.2" class="anchored" data-anchor-id="gdp-growth-trends"><span class="header-section-number">3.2.2</span> GDP Growth Trends</h4>
+<p><img src="figures/economic_analysis/gdp_growth_trend.png" class="img-fluid" alt="Line plot of annual GDP growth rates in the United States and China over time"></p>
+<p>China exhibits higher and more volatile GDP growth rates compared to the United States, with several periods of rapid expansion exceeding 10%. This volatility reflects the dynamics of a rapidly developing economy undergoing structural transformation, including shifts from agriculture to industry and from industry to services.</p>
+<p>In recent years, China’s growth rate shows a gradual decline, suggesting a transition from high-speed growth to more sustainable, moderate growth. This pattern is typical for economies as they mature and face constraints such as rising labor costs and diminishing returns to capital investment.</p>
+<p>The United States, on the other hand, demonstrates lower but more stable growth, typically ranging between 1% and 5%. Periodic downturns, such as those observed around the 2008 financial crisis and the 2020 pandemic, highlight its sensitivity to global economic shocks. However, the overall stability reflects a resilient and diversified economic structure.</p>
+<p>The contrast between the two countries illustrates a key economic principle: developing economies tend to grow faster but with greater volatility, while advanced economies experience slower but more stable growth. This difference has important implications for population health, as economic stability may support consistent investment in healthcare systems, while rapid growth may enable large improvements but also introduce short-term disparities.</p>
+</section>
+</section>
+<section id="health-analysis" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="health-analysis"><span class="header-section-number">3.3</span> Health Analysis</h3>
+<p>This section focuses on two population health indicators: life expectancy at birth and under-5 mortality rate. These variables are useful because they capture different dimensions of population health. Life expectancy reflects overall survival and long-term health conditions, while under-5 mortality is closely related to child health, healthcare access, nutrition, and public health infrastructure.</p>
+<section id="life-expectancy-trends" class="level4" data-number="3.3.1">
+<h4 data-number="3.3.1" class="anchored" data-anchor-id="life-expectancy-trends"><span class="header-section-number">3.3.1</span> Life Expectancy Trends</h4>
+<p><img src="figures/health_analysis/life_expectancy.png" class="img-fluid" alt="Line plot of life expectancy trends in the United States and China over time"></p>
+<p>Life expectancy increased in both the United States and China from 1970 to 2023. The United States began at a higher level and increased gradually over time. However, the U.S. trend becomes flatter in recent years, with a visible decline around 2020.</p>
+<p>China began with a much lower life expectancy but experienced faster improvement across the study period. The increase is especially clear from the 1970s through the early 2000s. By the most recent years, China’s life expectancy nearly converges with that of the United States.</p>
+<p>This trend suggests that China experienced major improvements in population health during a period of rapid economic and social development. It also shows that the health gap between the two countries narrowed substantially, even though the economic gap remained large.</p>
+</section>
+<section id="under-5-mortality-trends" class="level4" data-number="3.3.2">
+<h4 data-number="3.3.2" class="anchored" data-anchor-id="under-5-mortality-trends"><span class="header-section-number">3.3.2</span> Under-5 Mortality Trends</h4>
+<p><img src="figures/health_analysis/mortality_under5.png" class="img-fluid" alt="Line plot of under-5 mortality rates in the United States and China over time"></p>
+<p>Under-5 mortality declined in both countries over time. The United States began with a relatively low under-5 mortality rate and continued to decrease gradually.</p>
+<p>China began with a much higher under-5 mortality rate but experienced a sharp decline, especially between 1970 and 2010. By 2023, China’s under-5 mortality rate becomes much closer to the level of the United States.</p>
+<p>This pattern indicates substantial improvement in child health outcomes in China. The sharp decline may reflect improvements in living conditions, access to healthcare, nutrition, sanitation, and public health systems. Overall, the health analysis shows that population health outcomes in China improved quickly from a lower starting point, leading to strong convergence with the United States.</p>
+</section>
+</section>
+<section id="comparison-analysis" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="comparison-analysis"><span class="header-section-number">3.4</span> Comparison Analysis</h3>
+<section id="gdp-per-capita-gap" class="level4" data-number="3.4.1">
+<h4 data-number="3.4.1" class="anchored" data-anchor-id="gdp-per-capita-gap"><span class="header-section-number">3.4.1</span> GDP per Capita Gap</h4>
+<p><img src="figures/comparison_analysis/gdp_gap.png" class="img-fluid" alt="Line plot showing the GDP per capita gap between the United States and China over time"> The GDP per capita gap between the United States and China remains large but has gradually decreased over time. China’s rapid economic growth has allowed it to narrow the gap, although the United States continues to maintain a substantial income advantage. This result suggests partial economic convergence, but not full convergence.</p>
+</section>
+<section id="life-expectancy-gap" class="level4" data-number="3.4.2">
+<h4 data-number="3.4.2" class="anchored" data-anchor-id="life-expectancy-gap"><span class="header-section-number">3.4.2</span> Life Expectancy Gap</h4>
+<p><img src="figures/comparison_analysis/life_expectancy_comparison.png" class="img-fluid" alt="Line plot showing the life expectancy gap between the United States and China over time"> The life expectancy gap between the United States and China has steadily declined. China’s improvements in population health have allowed it to nearly close the gap with the United States. This suggests that health outcomes can converge faster than income levels during development.</p>
+</section>
+<section id="direct-gdp-comparison" class="level4" data-number="3.4.3">
+<h4 data-number="3.4.3" class="anchored" data-anchor-id="direct-gdp-comparison"><span class="header-section-number">3.4.3</span> Direct GDP Comparison</h4>
+<p><img src="figures/comparison_analysis/gdp_comparison.png" class="img-fluid" alt="Line plot directly comparing GDP per capita in the United States and China over time"> The direct comparison highlights clear structural differences between the two countries. The United States maintains stable and consistently high income levels, while China shows rapid growth and a steep upward trajectory. This reflects the contrast between a mature high-income economy and a developing economy undergoing rapid transformation.</p>
+</section>
+<section id="life-expectancy-comparison" class="level4" data-number="3.4.4">
+<h4 data-number="3.4.4" class="anchored" data-anchor-id="life-expectancy-comparison"><span class="header-section-number">3.4.4</span> Life Expectancy Comparison</h4>
+<p><img src="figures/comparison_analysis/life_expectancy_comparison.png" class="img-fluid" alt="Line plot directly comparing life expectancy in the United States and China over time"></p>
+<p>The direct comparison of life expectancy shows a clear convergence pattern between the United States and China. While the United States initially had a higher life expectancy, China has experienced steady and continuous improvements over time.</p>
+<p>This reinforces the gap analysis, indicating that differences in population health between the two countries have narrowed significantly. Compared to GDP, life expectancy demonstrates a more consistent and faster convergence process.</p>
+</section>
+</section>
+<section id="relationship-analysis" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="relationship-analysis"><span class="header-section-number">3.5</span> Relationship Analysis</h3>
+<section id="objective" class="level4" data-number="3.5.1">
+<h4 data-number="3.5.1" class="anchored" data-anchor-id="objective"><span class="header-section-number">3.5.1</span> Objective</h4>
+<p>This section examines whether economic development indicators are associated with population health outcomes in the United States and China.</p>
+</section>
+<section id="gdp-per-capita-and-life-expectancy" class="level4" data-number="3.5.2">
+<h4 data-number="3.5.2" class="anchored" data-anchor-id="gdp-per-capita-and-life-expectancy"><span class="header-section-number">3.5.2</span> GDP per Capita and Life Expectancy</h4>
+<p><img src="figures/relationship_analysis/gdp_per_capita_vs_life_expectancy.png" class="img-fluid" alt="Scatter plot comparing GDP per capita and life expectancy"></p>
+<p>GDP per capita is positively associated with life expectancy. As GDP per capita increases, life expectancy generally rises. This relationship is especially visible for China, where rapid increases in GDP per capita are linked with large improvements in life expectancy.</p>
+</section>
+<section id="gdp-per-capita-and-under-5-mortality" class="level4" data-number="3.5.3">
+<h4 data-number="3.5.3" class="anchored" data-anchor-id="gdp-per-capita-and-under-5-mortality"><span class="header-section-number">3.5.3</span> GDP per Capita and Under-5 Mortality</h4>
+<p><img src="figures/relationship_analysis/gdp_per_capita_vs_mortality_under5.png" class="img-fluid" alt="Scatter plot comparing GDP per capita and under-5 mortality"></p>
+<p>GDP per capita is negatively associated with under-5 mortality. Countries and years with higher GDP per capita tend to have lower child mortality rates. This relationship suggests that long-term economic development is linked to improved child health outcomes.</p>
+</section>
+<section id="gdp-growth-and-life-expectancy" class="level4" data-number="3.5.4">
+<h4 data-number="3.5.4" class="anchored" data-anchor-id="gdp-growth-and-life-expectancy"><span class="header-section-number">3.5.4</span> GDP Growth and Life Expectancy</h4>
+<p><img src="figures/relationship_analysis/gdp_growth_vs_life_expectancy.png" class="img-fluid" alt="Scatter plot comparing GDP growth and life expectancy"></p>
+<p>GDP growth rate shows a weaker and less consistent relationship with life expectancy than GDP per capita. This suggests that short-term annual economic growth is not as directly connected to health outcomes as long-term income level.</p>
+</section>
+<section id="gdp-growth-and-under-5-mortality" class="level4" data-number="3.5.5">
+<h4 data-number="3.5.5" class="anchored" data-anchor-id="gdp-growth-and-under-5-mortality"><span class="header-section-number">3.5.5</span> GDP Growth and Under-5 Mortality</h4>
+<p><img src="figures/relationship_analysis/gdp_growth_vs_mortality_under5.png" class="img-fluid" alt="Scatter plot comparing GDP growth and under-5 mortality"></p>
+<p>GDP growth rate also shows a weaker relationship with under-5 mortality. While economic growth may contribute to better health over time, annual growth fluctuations do not consistently predict immediate changes in child mortality. Overall, the relationship analysis suggests that GDP per capita is more closely related to population health than short-term GDP growth.</p>
+</section>
+</section>
+</section>
+<section id="results-and-discussion" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="results-and-discussion"><span class="header-section-number">4</span> Results and Discussion</h2>
+<section id="economic-gaps-remain-large" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="economic-gaps-remain-large"><span class="header-section-number">4.1</span> Economic gaps remain large</h3>
+<p>The comparison between the United States and China reveals that economic and health indicators do not converge at the same pace. Over the past several decades, China has experienced rapid economic growth, reflected in both its high GDP growth rates and the substantial increase in GDP per capita. Although the gap in GDP per capita between the two countries has narrowed significantly, it remains large. The United States continues to maintain a much higher income level, indicating that while China is catching up, full economic convergence has not yet been achieved.</p>
+<p>Examining GDP growth trends provides further insight into the development patterns of the two countries. China exhibits consistently higher but more volatile growth rates, especially during the 1980s through the early 2000s, reflecting a period of rapid industrialization and economic reform. In contrast, the United States shows lower but more stable growth, typically within a narrower range. Periods of economic downturn, such as the 2008 financial crisis and the 2020 COVID-19 pandemic, are more clearly visible in the U.S. data, highlighting differences in economic structure and resilience between a mature and a developing economy.</p>
+</section>
+<section id="health-outcomes-converge-faster-than-income" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="health-outcomes-converge-faster-than-income"><span class="header-section-number">4.2</span> Health outcomes converge faster than income</h3>
+<p>In terms of health outcomes, a different pattern emerges. China shows strong improvement in key health indicators, including rising life expectancy and sharply declining under-5 mortality rates. These trends suggest that population health in China has improved at a faster pace than income growth alone would predict. Meanwhile, the United States starts from a higher baseline and shows more gradual improvements over time. The faster convergence in health outcomes compared to income suggests that health improvements can occur even when economic gaps persist.The health results are especially important for answering the main research question. If economic development translated into health outcomes only through income level, we would expect the health gap to remain large as long as the GDP per capita gap remained large. Instead, life expectancy and under-5 mortality show much faster convergence. This suggests that population health can improve through broader development processes, including public health investment, healthcare access, education, sanitation, and nutrition, not only through individual income growth.</p>
+</section>
+<section id="relationship-between-economic-development-and-health" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="relationship-between-economic-development-and-health"><span class="header-section-number">4.3</span> Relationship between economic development and health</h3>
+<p>The relationship analysis between economic and health indicators further supports these observations. GDP per capita appears to have a strong and consistent association with better health outcomes. Higher income levels are linked to longer life expectancy and lower child mortality, likely due to improved access to healthcare, better nutrition, and enhanced living conditions. On the other hand, GDP growth rates do not show a similarly strong or stable relationship with health indicators. This suggests that short-term economic fluctuations are less important than sustained long-term development in shaping population health.</p>
+<p>These findings imply that economic development contributes to health improvements primarily through structural and long-term changes rather than temporary increases in growth. Investments in infrastructure, education, and healthcare systems—often associated with rising income levels—play a critical role in improving population health. The contrast between the United States and China highlights how different development stages influence both economic dynamics and health outcomes.</p>
+</section>
+<section id="limitations" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="limitations"><span class="header-section-number">4.4</span> Limitations</h3>
+<p>However, several limitations should be considered when interpreting these results. First, this analysis focuses on only two countries, which limits the generalizability of the findings. Other countries may exhibit different patterns depending on their economic structure, policy environment, and social conditions. Second, the analysis is based on observational data and identifies correlations rather than causal relationships. It is therefore not possible to conclude that economic growth directly causes improvements in health outcomes.</p>
+<p>In addition, important variables that may influence health outcomes are not explicitly included in this analysis. Factors such as healthcare access, public health policy, environmental quality, education levels, and demographic changes (such as aging populations) can all play significant roles. Data limitations, including potential measurement errors or differences in reporting standards across countries, may also affect the results.</p>
+</section>
+<section id="overall-interpretation" class="level3" data-number="4.5">
+<h3 data-number="4.5" class="anchored" data-anchor-id="overall-interpretation"><span class="header-section-number">4.5</span> Overall interpretation</h3>
+<p>Overall, while the findings provide strong evidence of a relationship between economic development and population health, they also highlight the complexity of this relationship. Future research could extend this analysis by including more countries, incorporating additional variables, and applying causal inference methods to better understand the mechanisms linking economic and health outcomes.</p>
+</section>
+</section>
+<section id="conclusion" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">5</span> Conclusion</h2>
+<p>This project analyzes the relationship between economic development and population health outcomes by comparing the United States and China over time.</p>
+<p>The results show clear differences in economic patterns. The United States maintains consistently high income levels with relatively stable growth, while China experiences rapid economic expansion, gradually narrowing the income gap. However, despite this progress, a substantial difference in GDP per capita remains.</p>
+<p>In contrast, health outcomes show stronger convergence. Life expectancy in China has increased significantly and is now close to that of the United States, while under-5 mortality has declined sharply. These findings suggest that improvements in population health can occur more rapidly than increases in income.</p>
+<p>The relationship analysis further supports this conclusion. GDP per capita is strongly associated with better health outcomes, including higher life expectancy and lower child mortality. However, short-term GDP growth appears to have a weaker and less consistent relationship with health indicators.</p>
+<p>Overall, the results indicate that long-term economic development plays an important role in improving population health, but the relationship is not uniform across all indicators. Health improvements may occur faster due to targeted policies, public health investments, and social development. At the same time, because this project uses descriptive trends and correlations, the results should be interpreted as evidence of association rather than proof of direct causation.</p>
+<p>These findings highlight the importance of considering multiple dimensions of development when evaluating progress across countries.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
