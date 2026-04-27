@@ -185,4 +185,16 @@ The findings suggest a meaningful but complex relationship between economic deve
 
 This project examines the relationship between economic development and population health in the United States and China. While China has narrowed the GDP per capita gap, a substantial income difference remains. In contrast, health outcomes—life expectancy and under-5 mortality—show much stronger convergence, suggesting that population health can improve faster than income. GDP per capita is more strongly associated with health outcomes than short-term GDP growth, highlighting the importance of long-term development over temporary fluctuations. As this analysis relies on correlations, findings should be interpreted as evidence of association rather than causation.
 
+## References
+
+World Bank. (2024). *World Development Indicators*. https://databank.worldbank.org/source/world-development-indicators
+
+World Bank. (2024). *GDP per capita (current US$)*. https://data.worldbank.org/indicator/NY.GDP.PCAP.CD
+
+World Bank. (2024). *GDP growth (annual %)*. https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG
+
+World Bank. (2024). *Life expectancy at birth, total (years)*. https://data.worldbank.org/indicator/SP.DYN.LE00.IN
+
+World Bank. (2024). *Mortality rate, under-5 (per 1,000 live births)*. https://data.worldbank.org/indicator/SH.DYN.MORT
+
 
