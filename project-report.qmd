@@ -73,7 +73,7 @@ summary
 
 The table summarizes average economic and health indicators for the United States and China over the study period. The United States has a substantially higher average GDP per capita, while China exhibits a higher average GDP growth rate. In terms of health outcomes, China has made significant progress, with increases in life expectancy and reductions in under-5 mortality, narrowing the gap with the United States.
 
-## Economic Analysis
+### Economic Analysis
 
 ::: {layout-ncol=2}
 
@@ -83,55 +83,38 @@ The table summarizes average economic and health indicators for the United State
 
 :::
 
-Although China has narrowed the income gap over time, a substantial difference in GDP per capita persists by the end of the period. This indicates that while developing economies can grow quickly, convergence toward high-income levels is gradual and may take decades. The observed pattern highlights different stages of economic development and suggests that absolute income levels still differ significantly despite similar growth momentum.
+**Interpretation:**
 
-From a broader perspective, higher GDP per capita implies greater access to healthcare, education, and public services, which are important determinants of population health. Therefore, the persistent income gap may help explain differences in health outcomes between the two countries.
+The United States maintains a consistently higher GDP per capita than China throughout the study period, reflecting its status as a mature, high-income economy. In contrast, China shows rapid and sustained growth in GDP per capita, especially after the 1990s, indicating strong economic development over time.
 
-
-#### GDP Growth Trends
-
-![](figures/economic_analysis/gdp_growth_trend.png){fig-alt="Line plot of annual GDP growth rates in the United States and China over time"}
-
-China exhibits higher and more volatile GDP growth rates compared to the United States, with several periods of rapid expansion exceeding 10%. This volatility reflects the dynamics of a rapidly developing economy undergoing structural transformation, including shifts from agriculture to industry and from industry to services.
-
-In recent years, China’s growth rate shows a gradual decline, suggesting a transition from high-speed growth to more sustainable, moderate growth. This pattern is typical for economies as they mature and face constraints such as rising labor costs and diminishing returns to capital investment.
-
-The United States, on the other hand, demonstrates lower but more stable growth, typically ranging between 1% and 5%. Periodic downturns, such as those observed around the 2008 financial crisis and the 2020 pandemic, highlight its sensitivity to global economic shocks. However, the overall stability reflects a resilient and diversified economic structure.
-
-The contrast between the two countries illustrates a key economic principle: developing economies tend to grow faster but with greater volatility, while advanced economies experience slower but more stable growth. This difference has important implications for population health, as economic stability may support consistent investment in healthcare systems, while rapid growth may enable large improvements but also introduce short-term disparities.
+GDP growth rates further highlight structural differences between the two countries. China exhibits higher but more volatile growth, characteristic of a rapidly developing economy undergoing structural transformation. The United States shows lower but more stable growth, reflecting economic maturity and resilience.
 
 ### Health Analysis
 
-#### Life Expectancy Trends
+::: {layout-ncol=2}
 
-![](figures/health_analysis/life_expectancy.png){fig-alt="Line plot of life expectancy trends in the United States and China over time"}
+![](figures/health_analysis/life_expectancy.png)
 
-Life expectancy increased in both countries over time. The United States began at a higher level and increased gradually, although the trend becomes flatter in recent years, with a slight decline around 2020.
+![](figures/health_analysis/mortality_under5.png)
 
-China began with much lower life expectancy but experienced faster improvement, especially from the 1970s through the early 2000s. By the most recent years, China’s life expectancy nearly converges with that of the United States. This suggests major improvements in population health during China’s period of economic and social development.
+:::
 
-#### Under-5 Mortality Trends
+**Interpretation:**
 
-![](figures/health_analysis/mortality_under5.png){fig-alt="Line plot of under-5 mortality rates in the United States and China over time"}
+Life expectancy increases steadily in both the United States and China over the study period, reflecting overall improvements in population health. The United States maintains a higher level throughout, consistent with its long-established healthcare systems and higher income levels. In contrast, China shows a faster rate of improvement, particularly from the 1980s onward, indicating rapid gains in health outcomes during its period of economic development.
 
-Under-5 mortality declined in both countries. The United States began with a relatively low under-5 mortality rate and decreased gradually over time.
+Under-5 mortality declines significantly in both countries, but the reduction is much more pronounced in China. Starting from a much higher baseline, China experiences a sharp and continuous decrease, especially between 1970 and 2010, suggesting major improvements in child health, healthcare access, and public health infrastructure. The United States, by comparison, shows a more gradual decline from an already low level.
 
-China began with a much higher rate but experienced a sharp decline, especially between 1970 and 2010. By 2023, China’s under-5 mortality rate becomes much closer to the level of the United States, indicating substantial improvement in child health outcomes.
 
 ### Comparison Analysis
 
 ::: {layout-ncol=2}
 
-![GDP per Capita Gap](figures/comparison_analysis/gdp_gap.png){fig-alt="Line plot showing the GDP per capita gap between the United States and China over time"}
+![](figures/comparison_analysis/gdp_gap.png){fig-alt="Line plot showing the GDP per capita gap between the United States and China over time"}
 
-![Life Expectancy Gap](figures/comparison_analysis/life_expectancy_comparison.png){fig-alt="Line plot showing the life expectancy gap between the United States and China over time"}
+![](figures/comparison_analysis/life_expectancy_comparison.png){fig-alt="Line plot showing the life expectancy gap between the United States and China over time"}
 
-![](figures/comparison_analysis/life_expectancy_gap.png){fig-alt="Line plot showing the life expectancy gap between the United States and China over time"}
-The life expectancy gap between the United States and China has steadily declined. China’s improvements in population health have allowed it to nearly close the gap with the United States.
-This suggests that health outcomes can converge faster than income levels during development.
-=======
 :::
->>>>>>> Stashed changes
 
 **Interpretation:**
 
@@ -139,9 +122,9 @@ The GDP per capita gap remains large despite narrowing over time, reflecting par
 
 ::: {layout-ncol=2}
 
-![GDP per Capita: Direct Comparison](figures/comparison_analysis/gdp_comparison.png){fig-alt="Line plot directly comparing GDP per capita in the United States and China over time"}
+![](figures/comparison_analysis/gdp_comparison.png){fig-alt="Line plot directly comparing GDP per capita in the United States and China over time"}
 
-![Life Expectancy: Direct Comparison](figures/comparison_analysis/life_expectancy_comparison.png){fig-alt="Line plot directly comparing life expectancy in the United States and China over time"}
+![](figures/comparison_analysis/life_expectancy_comparison.png){fig-alt="Line plot directly comparing life expectancy in the United States and China over time"}
 
 :::
 
@@ -154,9 +137,9 @@ The direct comparisons reinforce these patterns. The US maintains consistently h
 
 ::: {layout-ncol=2}
 
-![GDP per Capita and Life Expectancy](figures/relationship_analysis/gdp_per_capita_vs_life_expectancy.png){fig-alt="Scatter plot comparing GDP per capita and life expectancy"}
+![](figures/relationship_analysis/gdp_per_capita_vs_life_expectancy.png){fig-alt="Scatter plot comparing GDP per capita and life expectancy"}
 
-![GDP per Capita and Under-5 Mortality](figures/relationship_analysis/gdp_per_capita_vs_mortality_under5.png){fig-alt="Scatter plot comparing GDP per capita and under-5 mortality"}
+![](figures/relationship_analysis/gdp_per_capita_vs_mortality_under5.png){fig-alt="Scatter plot comparing GDP per capita and under-5 mortality"}
 
 :::
 
@@ -166,9 +149,9 @@ GDP per capita is positively associated with life expectancy and negatively asso
 
 ::: {layout-ncol=2}
 
-![GDP Growth and Life Expectancy](figures/relationship_analysis/gdp_growth_vs_life_expectancy.png){fig-alt="Scatter plot comparing GDP growth and life expectancy"}
+![](figures/relationship_analysis/gdp_growth_vs_life_expectancy.png){fig-alt="Scatter plot comparing GDP growth and life expectancy"}
 
-![GDP Growth and Under-5 Mortality](figures/relationship_analysis/gdp_growth_vs_mortality_under5.png){fig-alt="Scatter plot comparing GDP growth and under-5 mortality"}
+![](figures/relationship_analysis/gdp_growth_vs_mortality_under5.png){fig-alt="Scatter plot comparing GDP growth and under-5 mortality"}
 
 :::
 
