@@ -46,7 +46,6 @@ The final cleaned dataset contains 108 observations (54 years for each country) 
 │    ├── health_analysis
 │    ├── comparison_analysis
 │    └── relationship_analysis
-├── project-report_files/            # Quarto-generated dependencies (CSS, JS for HTML report) required for HTML rendering
 ├── scripts/
 │   ├── data_collection.py           # Fetch WDI data from World Bank API
 │   ├── data_cleaning.sql            # SQL cleaning script
