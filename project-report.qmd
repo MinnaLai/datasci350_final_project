@@ -22,8 +22,8 @@ format:
   html:
     toc: true
     number-sections: true
-  pdf:
-    documentclass: article
+    embed-resources: true
+  pdf: default
 ---
 
 ## Introduction
