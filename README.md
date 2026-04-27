@@ -36,12 +36,11 @@ The final cleaned dataset contains 108 observations (54 years for each country) 
 ├── data/
 │   ├── raw/
 │   │   └── raw_wdi_merged.csv       # Raw WDI API download (108 rows, 1970–2023)
-│   ├── processed/
-│   │   └── cleaned_data.csv         # Cleaned panel dataset (108 rows, no missing values)│ 
-│    └── .DS_Store
+│   └── processed/
+│   │   └── cleaned_data.csv         # Cleaned panel dataset (108 rows, no missing values)
 ├── scripts/
-│   ├── data_collection.py           # Person 1: fetch WDI data from World Bank API
-│   ├── data_cleaning.sql            # Person 1: SQL cleaning script
+│   ├── data_collection.py           # Fetch WDI data from World Bank API
+│   ├── data_cleaning.sql            # SQL cleaning script
 │   ├── economic_analysis.py
 │   ├── health_analysis.py
 │   ├── comparison_analysis.py
@@ -49,15 +48,14 @@ The final cleaned dataset contains 108 observations (54 years for each country) 
 ├── documentation/
 │   ├── codebook.md                  # Variable definitions, units, coverage, cleaning notes
 │   └── entity-relationship-diagram.md
-├── figures/
-│    ├── economic_analysis
-│    ├── health_analysis
-│    ├── comparison_analysis
-│    └── relationship_analysis
-└── .DS_Store
+├── figures/                         # Visual outputs organized by analysis type
+│    ├── economic_analysis/
+│    ├── health_analysis/
+│    ├── comparison_analysis/
+│    └── relationship_analysis/
 └── .gitignore
-└── project-report.qmd               #Quarto
-└── README.md                        # This file  
+└── project-report.qmd               # Quarto
+└── README.md                        
 
 ```
 
@@ -74,22 +72,44 @@ The `figures/` folder contains all visual outputs from the project, including:
 Install required packages:
 
 ```
-pip install pandas matplotlib
+pip install pandas matplotlib requests
 ```
 
-Run the analysis scripts:
+To reproduce the full project:
 
+1. (Optional) Collect raw data:
 ```
-python scripts/economic_analysis.py
-python scripts/health_analysis.py
-python scripts/comparative_analysis.py
-python scripts/relationship_analysis.py
+   python scripts/data_collection.py
 ```
 
-Render the final report:
-
+2. Clean data:
+**Using DuckDB (recommended):**
 ```
-quarto render project-report.qmd
+duckdb
+> CREATE TABLE raw_data AS SELECT * FROM read_csv_auto('data/raw/raw_wdi_merged.csv');
+> .read scripts/data_cleaning.sql
+> COPY cleaned_data TO 'data/processed/cleaned_data.csv' (HEADER, DELIMITER ',');
+ ```
+
+**Using SQLite:**
+```
+sqlite3 project.db
+> .mode csv
+> .import data/raw/raw_wdi_merged.csv raw_data
+> .read scripts/data_cleaning.sql
+```
+
+3. Run analyses:
+```
+   python scripts/economic_analysis.py
+   python scripts/health_analysis.py
+   python scripts/comparison_analysis.py
+   python scripts/relationship_analysis.py
+```
+
+4. Render report:
+```
+   quarto render project-report.qmd
 ```
 
 ---
@@ -104,9 +124,16 @@ quarto render project-report.qmd
 
 ## Notes
 
-All analysis uses the cleaned dataset located in `data/processed/cleaned_data.csv`.
+- All analysis uses the cleaned dataset located in `data/processed/cleaned_data.csv`.
 
-Figures are automatically saved in the `figures/` folder when scripts are executed.
+- If you do not wish to re-run data collection, you can directly use:
+  `data/processed/cleaned_data.csv`
+
+- All scripts assume the project root as the working directory
+
+- Figures are automatically saved in the `figures/` folder when scripts are executed.
+
+- Raw data remains unchanged to ensure reproducibility.
 
 ---
 
@@ -116,6 +143,8 @@ Figures are automatically saved in the `figures/` folder when scripts are execut
 Data is collected from the World Bank World Development Indicators (WDI) API and processed using SQL.
 
 Cleaning steps:
+- Retrieve multiple indicators from WDI API
+- Merge indicators by country and year into a single panel dataset
 - Filter to United States and China
 - Remove rows with missing values
 - Standardize variable types
@@ -137,12 +166,4 @@ The final cleaned dataset (`data/processed/cleaned_data.csv`) is used for all an
 
 - GDP gap between the US and China has narrowed but remains large  
 - Life expectancy shows stronger convergence  
-- Economic and health outcomes are related but converge at different rates  
-
----
-
-## Notes
-
-- All analyses use `data/processed/cleaned_data.csv`  
-- Figures are saved in the `figures/` folder  
-- Raw data remains unchanged for reproducibility
+- Economic and health outcomes are related but converge at different rates
