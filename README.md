@@ -166,6 +166,6 @@ The final cleaned dataset (`data/processed/cleaned_data.csv`) is used for all an
 
 ## Key Insights
 
-- GDP gap between the US and China has narrowed but remains large  
+- The GDP per capita gap between the US and China has widened over time and remains large 
 - Life expectancy shows stronger convergence  
 - Economic and health outcomes are related but converge at different rates
