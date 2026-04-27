@@ -84,7 +84,11 @@ Although China has narrowed the income gap over time, a substantial difference i
 From a broader perspective, higher GDP per capita implies greater access to healthcare, education, and public services, which are important determinants of population health. Therefore, the persistent income gap may help explain differences in health outcomes between the two countries.
 
 
+<<<<<<< Updated upstream
 #### GDP Growth Trends
+=======
+### Health Analysis
+>>>>>>> Stashed changes
 
 ![](figures/economic_analysis/gdp_growth_trend.png){fig-alt="Line plot of annual GDP growth rates in the United States and China over time"}
 
@@ -100,6 +104,7 @@ The contrast between the two countries illustrates a key economic principle: dev
 
 #### Life Expectancy Trends
 
+<<<<<<< Updated upstream
 ![](figures/health_analysis/life_expectancy.png){fig-alt="Line plot of life expectancy trends in the United States and China over time"}
 
 Life expectancy increased in both countries over time. The United States began at a higher level and increased gradually, although the trend becomes flatter in recent years, with a slight decline around 2020.
@@ -114,81 +119,90 @@ Under-5 mortality declined in both countries. The United States began with a rel
 
 China began with a much higher rate but experienced a sharp decline, especially between 1970 and 2010. By 2023, China’s under-5 mortality rate becomes much closer to the level of the United States, indicating substantial improvement in child health outcomes.
 
+=======
+>>>>>>> Stashed changes
 ### Comparison Analysis
 
-#### GDP per Capita Gap
+::: {layout-ncol=2}
 
-![](figures/comparison_analysis/gdp_gap.png){fig-alt="Line plot showing the GDP per capita gap between the United States and China over time"}
-The GDP per capita gap between the United States and China remains large but has gradually decreased over time. China’s rapid economic growth has allowed it to narrow the gap, although the United States continues to maintain a substantial income advantage.
-This result suggests partial economic convergence, but not full convergence.
+![GDP per Capita Gap](figures/comparison_analysis/gdp_gap.png){fig-alt="Line plot showing the GDP per capita gap between the United States and China over time"}
 
-#### Life Expectancy Gap
+![Life Expectancy Gap](figures/comparison_analysis/life_expectancy_comparison.png){fig-alt="Line plot showing the life expectancy gap between the United States and China over time"}
 
+<<<<<<< Updated upstream
 ![](figures/comparison_analysis/life_expectancy_gap.png){fig-alt="Line plot showing the life expectancy gap between the United States and China over time"}
 The life expectancy gap between the United States and China has steadily declined. China’s improvements in population health have allowed it to nearly close the gap with the United States.
 This suggests that health outcomes can converge faster than income levels during development.
+=======
+:::
+>>>>>>> Stashed changes
 
-#### Direct GDP Comparison
+**Interpretation:**
 
-![](figures/comparison_analysis/gdp_comparison.png){fig-alt="Line plot directly comparing GDP per capita in the United States and China over time"}
-The direct comparison highlights clear structural differences between the two countries. The United States maintains stable and consistently high income levels, while China shows rapid growth and a steep upward trajectory.
-This reflects the contrast between a mature high-income economy and a developing economy undergoing rapid transformation.
+The GDP per capita gap remains large despite narrowing over time, reflecting partial but incomplete economic convergence. In contrast, the life expectancy gap has nearly closed, suggesting that health outcomes can converge faster than income levels.
 
-#### Life Expectancy Comparison
+::: {layout-ncol=2}
 
-![](figures/comparison_analysis/life_expectancy_comparison.png){fig-alt="Line plot directly comparing life expectancy in the United States and China over time"}
+![GDP per Capita: Direct Comparison](figures/comparison_analysis/gdp_comparison.png){fig-alt="Line plot directly comparing GDP per capita in the United States and China over time"}
 
-The direct comparison of life expectancy shows a clear convergence pattern between the United States and China. While the United States initially had a higher life expectancy, China has experienced steady and continuous improvements over time.
+![Life Expectancy: Direct Comparison](figures/comparison_analysis/life_expectancy_comparison.png){fig-alt="Line plot directly comparing life expectancy in the United States and China over time"}
 
-This reinforces the gap analysis, indicating that differences in population health between the two countries have narrowed significantly. Compared to GDP, life expectancy demonstrates a more consistent and faster convergence process.
+:::
+
+**Interpretation:**
+
+The direct comparisons reinforce these patterns. The US maintains consistently high and stable income levels, while China shows a steep upward trajectory. For life expectancy, China's continuous improvement has brought it close to US levels—a faster convergence than what is observed for GDP.
+
 
 ### Relationship Analysis
 
-#### Objective
+::: {layout-ncol=2}
 
-This section examines whether economic development indicators are associated with population health outcomes in the United States and China.
+![GDP per Capita and Life Expectancy](figures/relationship_analysis/gdp_per_capita_vs_life_expectancy.png){fig-alt="Scatter plot comparing GDP per capita and life expectancy"}
 
-#### GDP per Capita and Life Expectancy
+![GDP per Capita and Under-5 Mortality](figures/relationship_analysis/gdp_per_capita_vs_mortality_under5.png){fig-alt="Scatter plot comparing GDP per capita and under-5 mortality"}
 
-![](figures/relationship_analysis/gdp_per_capita_vs_life_expectancy.png){fig-alt="Scatter plot comparing GDP per capita and life expectancy"}
+:::
 
-GDP per capita is positively associated with life expectancy. As GDP per capita increases, life expectancy generally rises. 
-This relationship is especially visible for China, where rapid increases in GDP per capita are linked with large improvements in life expectancy.
+**Interpretation:**
 
-#### GDP per Capita and Under-5 Mortality
+GDP per capita is positively associated with life expectancy and negatively associated with under-5 mortality—higher income levels correspond to longer lives and lower child mortality. This relationship is especially pronounced for China, where rapid GDP growth coincides with large health gains.
 
-![](figures/relationship_analysis/gdp_per_capita_vs_mortality_under5.png){fig-alt="Scatter plot comparing GDP per capita and under-5 mortality"}
+::: {layout-ncol=2}
 
-GDP per capita is negatively associated with under-5 mortality. Countries and years with higher GDP per capita tend to have lower child mortality rates.
-This relationship suggests that long-term economic development is linked to improved child health outcomes.
+![GDP Growth and Life Expectancy](figures/relationship_analysis/gdp_growth_vs_life_expectancy.png){fig-alt="Scatter plot comparing GDP growth and life expectancy"}
 
-#### GDP Growth and Life Expectancy
+![GDP Growth and Under-5 Mortality](figures/relationship_analysis/gdp_growth_vs_mortality_under5.png){fig-alt="Scatter plot comparing GDP growth and under-5 mortality"}
 
-![](figures/relationship_analysis/gdp_growth_vs_life_expectancy.png){fig-alt="Scatter plot comparing GDP growth and life expectancy"}
+:::
 
-GDP growth rate shows a weaker and less consistent relationship with life expectancy than GDP per capita. 
-This suggests that short-term annual economic growth is not as directly connected to health outcomes as long-term income level.
+**Interpretation:**
 
-#### GDP Growth and Under-5 Mortality
-
-![](figures/relationship_analysis/gdp_growth_vs_mortality_under5.png){fig-alt="Scatter plot comparing GDP growth and under-5 mortality"}
-
-GDP growth rate also shows a weaker relationship with under-5 mortality. 
-While economic growth may contribute to better health over time, annual growth fluctuations do not consistently predict immediate changes in child mortality.
-Overall, the relationship analysis suggests that GDP per capita is more closely related to population health than short-term GDP growth.
+GDP growth rate shows a weaker and less consistent relationship with both health indicators. Short-term annual growth fluctuations do not reliably predict changes in life expectancy or child mortality, suggesting that long-term income level matters more than short-term growth for population health.
 
 ## Results and Discussion
 
+<<<<<<< Updated upstream
 The comparison between the United States and China reveals that economic and health indicators do not converge at the same pace. Over the past several decades, China has experienced rapid economic growth, reflected in both its high GDP growth rates and the substantial increase in GDP per capita. Although the gap in GDP per capita between the two countries has narrowed significantly, it remains large. The United States continues to maintain a much higher income level, indicating that while China is catching up, full economic convergence has not yet been achieved.
 
 Examining GDP growth trends provides further insight into the development patterns of the two countries. China exhibits consistently higher but more volatile growth rates, especially during the 1980s through the early 2000s, reflecting a period of rapid industrialization and economic reform. In contrast, the United States shows lower but more stable growth, typically within a narrower range. Periods of economic downturn, such as the 2008 financial crisis and the 2020 COVID-19 pandemic, are more clearly visible in the U.S. data, highlighting differences in economic structure and resilience between a mature and a developing economy.
 
 In terms of health outcomes, a different pattern emerges. China shows strong improvement in key health indicators, including rising life expectancy and sharply declining under-5 mortality rates. These trends suggest that population health in China has improved at a faster pace than income growth alone would predict. Meanwhile, the United States starts from a higher baseline and shows more gradual improvements over time. The faster convergence in health outcomes compared to income suggests that health improvements can occur even when economic gaps persist.
+=======
+### Economic gaps remain large
 
-The relationship analysis between economic and health indicators further supports these observations. GDP per capita appears to have a strong and consistent association with better health outcomes. Higher income levels are linked to longer life expectancy and lower child mortality, likely due to improved access to healthcare, better nutrition, and enhanced living conditions. On the other hand, GDP growth rates do not show a similarly strong or stable relationship with health indicators. This suggests that short-term economic fluctuations are less important than sustained long-term development in shaping population health.
+China has experienced rapid economic growth over recent decades, substantially narrowing the GDP per capita gap with the United States. However, the gap remains large, indicating partial but incomplete economic convergence. China's growth is higher but more volatile, while the US shows lower, more stable growth—with downturns like 2008 and 2020 clearly visible in the data.
 
-These findings imply that economic development contributes to health improvements primarily through structural and long-term changes rather than temporary increases in growth. Investments in infrastructure, education, and healthcare systems—often associated with rising income levels—play a critical role in improving population health. The contrast between the United States and China highlights how different development stages influence both economic dynamics and health outcomes.
+### Health outcomes converge faster than income
 
+China shows strong improvements in life expectancy and under-5 mortality, converging toward US levels faster than income would predict. This suggests that health improvements are driven not only by rising income, but also by broader development processes such as public health investment, healthcare access, education, and sanitation.
+
+### Relationship between economic development and health
+>>>>>>> Stashed changes
+
+GDP per capita shows a strong and consistent association with better health outcomes—higher income levels link to longer life expectancy and lower child mortality. GDP growth rate, however, shows a weaker relationship, suggesting that long-term income level matters more than short-term growth fluctuations for population health.
+
+<<<<<<< Updated upstream
 However, several limitations should be considered when interpreting these results. First, this analysis focuses on only two countries, which limits the generalizability of the findings. Other countries may exhibit different patterns depending on their economic structure, policy environment, and social conditions. Second, the analysis is based on observational data and identifies correlations rather than causal relationships. It is therefore not possible to conclude that economic growth directly causes improvements in health outcomes.
 
 In addition, important variables that may influence health outcomes are not explicitly included in this analysis. Factors such as healthcare access, public health policy, environmental quality, education levels, and demographic changes (such as aging populations) can all play significant roles. Data limitations, including potential measurement errors or differences in reporting standards across countries, may also affect the results.
@@ -209,5 +223,18 @@ Overall, the results indicate that long-term economic development plays an impor
 
 These findings highlight the importance of considering multiple dimensions of development when evaluating progress across countries.
 
+=======
+### Limitations
+
+This analysis is limited to two countries, restricting generalizability. The results reflect correlations rather than causal relationships. Key confounding variables—such as healthcare policy, education, and environmental quality—are not explicitly controlled for, and data quality differences across countries may also affect the findings.
+
+### Overall interpretation
+
+The findings suggest a meaningful but complex relationship between economic development and population health. Future research should include more countries, additional variables, and causal inference methods to better understand the underlying mechanisms.
+
+## Conclusion
+
+This project examines the relationship between economic development and population health in the United States and China. While China has narrowed the GDP per capita gap, a substantial income difference remains. In contrast, health outcomes—life expectancy and under-5 mortality—show much stronger convergence, suggesting that population health can improve faster than income. GDP per capita is more strongly associated with health outcomes than short-term GDP growth, highlighting the importance of long-term development over temporary fluctuations. As this analysis relies on correlations, findings should be interpreted as evidence of association rather than causation.
+>>>>>>> Stashed changes
 
 
