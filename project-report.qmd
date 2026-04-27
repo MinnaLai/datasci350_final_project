@@ -5,7 +5,7 @@ title: |
   in the US vs. China?
 
 subtitle: |
-  Fei Yi (2609012) · Sarah Shao (2608499) · Serena Gu (2609244)  
+  Fei Yi (2609012) · Sarah Shao (2608499) · Serena Gu (2609244) ·
   Tianyi Grace Zhou (2644924) · Minna Lai (2599976)
 
 format:
@@ -13,30 +13,43 @@ format:
     toc: true
     number-sections: true
     embed-resources: true
-  pdf: default
+  pdf:
+    number-sections: true
+    geometry: margin=0.75in
+    fontsize: 12pt
 ---
 
 ## Introduction
 
-Economic development and population health are closely interconnected. As countries grow economically, improvements in income, infrastructure, and public services may contribute to better health outcomes. However, the extent and timing of these improvements can differ across countries depending on their stage of development.
+Economic development and population health are closely interconnected. As countries grow economically, infrastructure, and public services can contribute to better health outcomes. However, the timing and magnitude of these improvements may vary across countries depending on their stage of development.
 
-This project examines whether improvements in economic development lead to better population health outcomes by comparing the United States and China. The United States represents a mature, high-income economy with stable growth, while China represents a rapidly developing economy that has undergone significant transformation over recent decades.
+This project investigates whether improvements in economic development lead to better population health outcomes by comparing the United States and China. The United States represents a mature, high-income economy with relatively stable growth, while China represents a rapidly developing economy that has experienced significant structural changes in recent decades.
 
-Using data from the World Bank World Development Indicators (WDI), we analyze key economic indicators (GDP per capita and GDP growth) alongside health indicators (life expectancy and under-5 mortality rate). By comparing trends over time, we aim to understand how economic development is associated with changes in population health.
-
-The analysis is organized into several sections. First, we examine economic trends, followed by health outcomes. We then directly compare the two countries and explore the relationship between economic indicators and health outcomes.
+Using data from the World Bank World Development Indicators (WDI), we analyze key economic indicators (GDP per capita and GDP growth) alongside health indicators (life expectancy and under-5 mortality rate). By examining trends over time and comparing the two countries, we aim to understand how economic development is associated with changes in population health.
 
 ## Data Description
 
-This project uses data from the World Bank World Development Indicators (WDI) database, which provides standardized economic and social indicators across countries and over time. The WDI dataset covers more than 200 countries and spans from 1960 to recent years, making it suitable for analyzing long-term trends and cross-country comparisons.
+### Data Source
 
-We focus on two countries, the United States (USA) and China (CHN), and select four indicators that capture both economic development and population health outcomes. For economic development, we use GDP per capita (constant 2015 US$) and GDP growth (annual %). For health outcomes, we use life expectancy at birth (years) and the under-5 mortality rate (per 1,000 live births). These indicators allow us to examine how economic changes relate to improvements in population health over time.
+The dataset used in this project is obtained from the World Bank World Development Indicators (WDI), a standardized database that provides economic and social indicators across countries and over time.
 
-The data was retrieved directly from the World Bank API using Python. Each indicator was initially downloaded separately and then merged into a unified dataset based on country and year. After merging, we obtained a panel-style dataset where each row represents a country-year observation and each column corresponds to one of the selected indicators.
+### Variables
 
-Data cleaning was performed using SQL to ensure consistency and usability for further analysis. The cleaning process included selecting relevant columns, filtering the dataset to include only the United States and China, standardizing variable names, and converting all indicator values into numeric formats. We also checked for missing values and focused on the overlapping time period where all four indicators are available, in order to maintain comparability across variables.
+We focus on two countries, the United States (USA) and China (CHN), and select four key variables representing economic development and population health:
 
-The final dataset contains the following key variables: country, country_code, year, gdp_per_capita, gdp_growth, life_expectancy, and mortality_under5. Each variable is defined according to the original WDI indicator specifications, with units preserved (e.g., constant USD for GDP per capita and years for life expectancy). This cleaned dataset serves as the foundation for all subsequent analysis in the project.
+- GDP per capita (constant 2015 US$)  
+- GDP growth (annual %)  
+- Life expectancy at birth (years)  
+- Under-5 mortality rate (per 1,000 live births)  
+
+### Data Processing
+
+Data was retrieved using Python and merged into a unified dataset based on country and year. The resulting dataset has a panel structure, where each row represents a country-year observation.
+
+Data cleaning was performed using SQL, including filtering relevant countries, standardizing variable names, and handling missing values. We restricted the dataset to the overlapping time period where all variables are available to ensure comparability.
+
+The final dataset contains:  
+`country`, `country_code`, `year`, `gdp_per_capita`, `gdp_growth`, `life_expectancy`, `mortality_under5`.
 
 ## Data Analysis
 
