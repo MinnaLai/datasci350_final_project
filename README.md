@@ -6,11 +6,11 @@ Do Improvements in Economic Development Lead to Better Population Health Outcome
 
 ## Project Description
 
-This project analyzes the relationship between economic development and population health outcomes in the United States and China from 1970 to 2023 using World Bank data.
+This project analyzes the relationship between economic development and population health outcomes in the United States and China from 1970 to 2023 using data from the World Bank.
 
-The analysis focuses on four key indicators: GDP per capita, GDP growth, life expectancy, and under-5 mortality. 
+The analysis focuses on four key indicators: GDP per capita, GDP growth, life expectancy, and under-5 mortality.
 
-We examine trends over time, compare differences between countries, and explore relationships between economic and health variables.
+We conduct time-series analysis, cross-country comparison, and gap analysis to examine how economic and health outcomes evolve across different stages of development. In addition, we explore relationships between economic and health variables to understand how improvements in income levels may be associated with population health outcomes.
 
 ---
 
@@ -52,7 +52,7 @@ The final cleaned dataset contains 108 observations (54 years for each country) 
 ├── figures/
 │    ├── economic_analysis
 │    ├── health_analysis
-│    ├── comparasion_analysis
+│    ├── comparison_analysis
 │    └── relationship_analysis
 └── .DS_Store
 └── .gitignore
@@ -113,179 +113,36 @@ Figures are automatically saved in the `figures/` folder when scripts are execut
 
 ## Data Collection & Cleaning
 
-### Indicators collected
+Data is collected from the World Bank World Development Indicators (WDI) API and processed using SQL.
 
-| Column | WDI Code | Description | Units |
-|--------|----------|-------------|-------|
-| `gdp_per_capita` | `NY.GDP.PCAP.KD` | GDP per capita | Constant 2015 USD |
-| `gdp_growth` | `NY.GDP.MKTP.KD.ZG` | GDP growth rate | Annual % |
-| `life_expectancy` | `SP.DYN.LE00.IN` | Life expectancy at birth | Years |
-| `mortality_under5` | `SH.DYN.MORT` | Under-5 mortality rate | Per 1,000 live births |
+Cleaning steps:
+- Filter to United States and China
+- Remove rows with missing values
+- Standardize variable types
 
-Countries: **United States (USA)** and **China (CHN)**  
-Source: [World Bank WDI API](https://datahelpdesk.worldbank.org/knowledgebase/articles/898581)
+The final cleaned dataset (`data/processed/cleaned_data.csv`) is used for all analyses.
 
 ---
 
-### Step 1 — Run the data collection script
+## Analysis Overview
 
-Fetches all four indicators from the World Bank REST API and saves the raw merged CSV.
-
-**Prerequisites:**
-```bash
-pip install requests pandas
-```
-
-**Run:**
-```bash
-python scripts/data_collection.py
-```
-
-**Output:** `data/raw/raw_wdi_merged.csv`
-- 108 rows (54 per country, years 1970–2023)
-- 7 columns: `country`, `country_code`, `year`, `gdp_per_capita`, `gdp_growth`, `life_expectancy`, `mortality_under5`
+- **Economic Analysis:** GDP per capita and GDP growth trends  
+- **Health Analysis:** Life expectancy and under-5 mortality trends  
+- **Comparative Analysis:** Cross-country comparison and gap analysis  
+- **Relationship Analysis:** Correlation between economic and health indicators  
 
 ---
 
-### Run the SQL cleaning script
+## Key Insights
 
-`scripts/data_cleaning.sql` performs data cleaning using standard SQL. It:
-- Filters to only USA and CHN rows
-- Drops any row where at least one indicator is NULL
-- Casts columns to correct types
-- Labels economic development tiers with `CASE WHEN`
-- Provides summary statistics for verification
-
-**Using DuckDB (recommended):**
-```bash
-duckdb
-> CREATE TABLE raw_data AS SELECT * FROM read_csv_auto('data/raw/raw_wdi_merged.csv');
-> .read scripts/data_cleaning.sql
-> COPY cleaned_data TO 'data/processed/cleaned_data.csv' (HEADER, DELIMITER ',');
-```
-
-**Using SQLite:**
-```bash
-sqlite3 project.db
-> .mode csv
-> .import data/raw/raw_wdi_merged.csv raw_data
-> .read scripts/data_cleaning.sql
-```
+- GDP gap between the US and China has narrowed but remains large  
+- Life expectancy shows stronger convergence  
+- Economic and health outcomes are related but converge at different rates  
 
 ---
 
-### Cleaned dataset — `data/processed/cleaned_data.csv`
+## Notes
 
-This is the **primary input for all downstream analysis**.
-
-| Property | Value |
-|----------|-------|
-| File | `data/processed/cleaned_data.csv` |
-| Rows | 108 |
-| Columns | 7 |
-| CHN coverage | 1970–2023 (54 years) |
-| USA coverage | 1970–2023 (54 years) |
-| Missing values | 0 |
-
-See [`documentation/codebook.md`](documentation/codebook.md) for full variable descriptions, units, WDI codes, and cleaning notes.
-
----
-
-## Notes for Other Team Members
-
-- Load `data/processed/cleaned_data.csv` for all analysis — fully clean, zero missing values.
-- Both countries share the same year range: **1970–2023 (54 years each, 108 rows total)**.
-- Do not modify `data/raw/raw_wdi_merged.csv` — it is the unmodified API output and serves as the audit trail.
-
----
-
-## Economic Analysis
-
-This script analyzes economic development trends in the United States and China using GDP per capita and GDP growth rate.
-
-### What this script does
-- Loads the cleaned dataset from `data/processed/cleaned_data.csv`
-- Filters data for the United States and China
-- Generates time-series plots for:
-  - GDP per capita over time
-  - GDP growth rate over time
-- Saves figures to the `figures/` folder
-
-### How to run
-python scripts/economic_analysis.py
-
-### Figures
-- figures/gdp_per_capita_trend.png
-- figures/gdp_growth_trend.png
-
----
-
-## Health Analysis
-
-This script analyzes population health trends in the United States and China using life expectancy and under-5 mortality.
-
-### What this script does
-- Loads the cleaned dataset from `data/processed/cleaned_data.csv`
-- Filters data for the United States and China
-- Generates time-series plots for:
-  - Life expectancy over time
-  - Under-5 mortality rate over time
-- Saves figures to the `figures/` folder
-
-### How to run
-python scripts/health_analysis.py
-
-### Figures
-- figures/life_expectancy.png
-- figures/mortality_under5.png
-
----
-
-## Comparative Analysis
-
-This script compares economic and health indicators between the United States and China by calculating differences over time.
-
-### What this script does
-- Loads the cleaned dataset
-- Separates data for the United States and China
-- Merges datasets by year
-- Computes:
-  - GDP per capita gap
-  - Life expectancy gap
-- Generates comparison plots and gap trends
-- Saves figures to the `figures/` folder
-
-### How to run
-python scripts/comparative_analysis.py
-
-### Figures
-- figures/gdp_comparison.png
-- figures/life_expectancy_comparison.png
-- figures/gdp_gap.png
-- figures/life_gap.png
-
----
-
-## Relationship Analysis
-
-This script explores relationships between economic and health variables using correlation analysis and scatter plots.
-
-### What this script does
-- Loads the cleaned dataset
-- Computes correlations between:
-  - GDP per capita and life expectancy
-  - GDP per capita and under-5 mortality
-  - GDP growth and life expectancy
-  - GDP growth and under-5 mortality
-- Saves correlation results to `documentation/relationship_correlations.csv`
-- Generates scatter plots for each relationship
-- Saves figures to the `figures/` folder
-
-### How to run
-python scripts/relationship_analysis.py
-
-### Figures
-- figures/gdp_per_capita_vs_life_expectancy.png
-- figures/gdp_per_capita_vs_mortality_under5.png
-- figures/gdp_growth_vs_life_expectancy.png
-- figures/gdp_growth_vs_mortality_under5.png
+- All analyses use `data/processed/cleaned_data.csv`  
+- Figures are saved in the `figures/` folder  
+- Raw data remains unchanged for reproducibility
