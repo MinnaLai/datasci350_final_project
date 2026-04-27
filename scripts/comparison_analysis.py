@@ -52,7 +52,7 @@ plt.title("GDP per Capita: US vs China")
 plt.legend()
 
 # Save figure
-plt.savefig("figures/gdp_comparison.png")
+plt.savefig("figures/comparison_analysis/gdp_comparison.png")
 
 plt.show()
 
@@ -69,7 +69,7 @@ plt.title("Life Expectancy: US vs China")
 
 plt.legend()
 
-plt.savefig("figures/life_expectancy_comparison.png")
+plt.savefig("figures/comparison_analysis/life_expectancy_comparison.png")
 
 plt.show()
 
@@ -81,7 +81,7 @@ plt.plot(df_compare["year"], df_compare["gdp_gap"])
 plt.xlabel("Year")
 plt.ylabel("GDP Gap")
 plt.title("GDP Gap: US vs China")
-plt.savefig("figures/gdp_gap.png")
+plt.savefig("figures/comparison_analysis/gdp_gap.png")
 plt.show()
 
 # Life expectancy gap
@@ -90,5 +90,5 @@ plt.plot(df_compare["year"], df_compare["life_gap"])
 plt.xlabel("Year")
 plt.ylabel("Life Expectancy Gap")
 plt.title("Life Expectancy Gap: US vs China")
-plt.savefig("figures/life_gap.png")
+plt.savefig("figures/comparison_analysis/life_gap.png")
 plt.show()

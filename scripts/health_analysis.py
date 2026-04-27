@@ -3,9 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 project_dir = Path(__file__).resolve().parent.parent
-data_path = project_dir / "cleaned_data.csv"
-figures_dir = project_dir / "figures"
-figures_dir.mkdir(exist_ok=True)
+data_path = project_dir / "data" / "processed" / "cleaned_data.csv"
+figures_dir = project_dir / "figures" / "health_analysis"
+figures_dir.mkdir(parents=True, exist_ok=True)
 
 df = pd.read_csv(data_path)
 
