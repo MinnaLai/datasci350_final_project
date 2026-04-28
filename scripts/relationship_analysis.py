@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt
 # -----------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_PATH = BASE_DIR / "data" / "processed" / "cleaned_data.csv"
-FIGURES_DIR = BASE_DIR / "figures"
+FIGURES_DIR = BASE_DIR / "figures" / "relationship_analysis"
 
-FIGURES_DIR.mkdir(exist_ok=True)
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 
 # -----------------------------
@@ -56,13 +56,6 @@ for x_var, y_var in pairs:
         }
     )
 
-corr_df = pd.DataFrame(correlation_results)
-corr_output_path = BASE_DIR / "documentation" / "relationship_correlations.csv"
-corr_df.to_csv(corr_output_path, index=False)
-
-print("Correlation results:")
-print(corr_df)
-print(f"\nSaved correlations to: {corr_output_path}")
 
 
 # -----------------------------
