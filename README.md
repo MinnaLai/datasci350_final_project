@@ -1,6 +1,6 @@
 # DATASCI 350 Final Project
 
-## Research Question: 
+## Research Question
 
 Do Improvements in Economic Development Lead to Better Population Health Outcomes in the US vs. China?
 
@@ -19,6 +19,7 @@ We conduct time-series analysis, cross-country comparison, and gap analysis to e
 The dataset is constructed from the World Bank World Development Indicators (WDI) and includes annual observations for the United States and China from 1970 to 2023.
 
 It contains four key variables:
+
 - GDP per capita (constant 2015 USD)
 - GDP growth rate (annual %)
 - Life expectancy at birth (years)
@@ -26,46 +27,45 @@ It contains four key variables:
 
 The final cleaned dataset contains 108 observations (54 years for each country) with no missing values.
 
-----
-
+---
 
 ## Repository Structure
 
 ```
 .
-├── data/
-│   ├── raw/
-│   │   └── raw_wdi_merged.csv       # Raw WDI API download (108 rows, 1970–2023)
-│   └── processed/
-│   │   └── cleaned_data.csv         # Cleaned panel dataset (108 rows, no missing values)
-├── documentation/
-│   ├── codebook.md                  # Variable definitions, units, coverage, cleaning notes
-│   └── entity-relationship-diagram.md
-├── figures/                         # Visual outputs organized by analysis type
-│    ├── economic_analysis/
-│    ├── health_analysis/
-│    ├── comparison_analysis/
-│    └── relationship_analysis/
-├── scripts/
-│   ├── data_collection.py           # Fetch WDI data from World Bank API
-│   ├── data_cleaning.sql            # SQL cleaning script
-│   ├── economic_analysis.py
-│   ├── health_analysis.py
-│   ├── comparison_analysis.py
-│   └── relationship_analysis.py
-└── .gitignore
-└── project-report.html
-└── project-report.pdf
-└── project-report.qmd               # Quarto
-└── README.md                        
-
+data/
+  raw/
+    raw_wdi_merged.csv       # Raw WDI API download (108 rows, 1970-2023)
+  processed/
+    cleaned_data.csv         # Cleaned panel dataset (108 rows, no missing values)
+documentation/
+  codebook.md                # Variable definitions, units, coverage, cleaning notes
+  entity_relationship_diagram.md
+figures/                     # Visual outputs organized by analysis type
+  economic_analysis/
+  health_analysis/
+  comparison_analysis/
+  relationship_analysis/
+scripts/
+  data_collection.py         # Fetch WDI data from World Bank API
+  data_cleaning.sql          # SQL cleaning script
+  economic_analysis.py
+  health_analysis.py
+  comparison_analysis.py
+  relationship_analysis.py
+.gitignore
+project-report.html
+project-report.pdf
+project-report.qmd           # Quarto
+README.md
 ```
 
 The `figures/` folder contains all visual outputs from the project, including:
-- economic analysis figures (GDP per capita trends, GDP growth trends)  
-- health analysis figures (life expectancy, under-5 mortality)  
-- comparative analysis figures (country comparisons and gaps)  
-- relationship analysis figures (scatter plots between economic and health variables) 
+
+- economic analysis figures (GDP per capita trends, GDP growth trends)
+- health analysis figures (life expectancy, under-5 mortality)
+- comparative analysis figures (country comparisons and gaps)
+- relationship analysis figures (scatter plots between economic and health variables)
 
 ---
 
@@ -79,21 +79,23 @@ pip install pandas matplotlib seaborn requests duckdb
 
 To reproduce the full project:
 
-1. (Optional) Collect raw data:
+1. Optional: collect raw data.
+
 ```
-   python scripts/data_collection.py
+python scripts/data_collection.py
 ```
 
-2. Clean data:
-**Using DuckDB (recommended):**
+2. Clean data using DuckDB.
+
 ```
 duckdb
 > CREATE TABLE raw_data AS SELECT * FROM read_csv_auto('data/raw/raw_wdi_merged.csv');
 > .read scripts/data_cleaning.sql
 > COPY cleaned_data TO 'data/processed/cleaned_data.csv' (HEADER, DELIMITER ',');
- ```
+```
 
-**Using SQLite:**
+SQLite can also be used:
+
 ```
 sqlite3 project.db
 > .mode csv
@@ -101,17 +103,19 @@ sqlite3 project.db
 > .read scripts/data_cleaning.sql
 ```
 
-3. Run analyses:
+3. Run analyses from the project root.
+
 ```
-   python scripts/economic_analysis.py
-   python scripts/health_analysis.py
-   python scripts/comparison_analysis.py
-   python scripts/relationship_analysis.py
+python scripts/economic_analysis.py
+python scripts/health_analysis.py
+python scripts/comparison_analysis.py
+python scripts/relationship_analysis.py
 ```
 
-4. Render report:
+4. Render report.
+
 ```
-   quarto render project-report.qmd
+quarto render project-report.qmd
 ```
 
 ---
@@ -119,7 +123,7 @@ sqlite3 project.db
 ## Prerequisites
 
 - Python 3.8+
-- pandas, matplotlib
+- pandas, matplotlib, seaborn, requests, duckdb
 - Quarto (for rendering the report)
 
 ---
@@ -127,24 +131,19 @@ sqlite3 project.db
 ## Notes
 
 - All analysis uses the cleaned dataset located in `data/processed/cleaned_data.csv`.
-
-- If you do not wish to re-run data collection, you can directly use:
-  `data/processed/cleaned_data.csv`
-
-- All scripts assume the project root as the working directory
-
+- If you do not wish to re-run data collection, you can directly use `data/processed/cleaned_data.csv`.
+- All scripts assume the project root as the working directory.
 - Figures are automatically saved in the `figures/` folder when scripts are executed.
-
 - Raw data remains unchanged to ensure reproducibility.
 
 ---
-
 
 ## Data Collection & Cleaning
 
 Data is collected from the World Bank World Development Indicators (WDI) API and processed using SQL.
 
 Cleaning steps:
+
 - Retrieve multiple indicators from WDI API
 - Merge indicators by country and year into a single panel dataset
 - Filter to United States and China
@@ -157,15 +156,15 @@ The final cleaned dataset (`data/processed/cleaned_data.csv`) is used for all an
 
 ## Analysis Overview
 
-- **Economic Analysis:** GDP per capita and GDP growth trends  
-- **Health Analysis:** Life expectancy and under-5 mortality trends  
-- **Comparative Analysis:** Cross-country comparison and gap analysis  
-- **Relationship Analysis:** Correlation between economic and health indicators  
+- **Economic Analysis:** GDP per capita and GDP growth trends
+- **Health Analysis:** Life expectancy and under-5 mortality trends
+- **Comparative Analysis:** Cross-country comparison and gap analysis
+- **Relationship Analysis:** Correlation between economic and health indicators
 
 ---
 
 ## Key Insights
 
-- The GDP per capita gap between the US and China has widened over time and remains large 
-- Life expectancy shows stronger convergence  
-- Economic and health outcomes are related but converge at different rates
+- The GDP per capita gap between the US and China has widened over time and remains large.
+- Life expectancy shows stronger convergence.
+- Economic and health outcomes are related but converge at different rates.
