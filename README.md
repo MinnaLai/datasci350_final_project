@@ -33,31 +33,31 @@ The final cleaned dataset contains 108 observations (54 years for each country) 
 
 ```
 .
-data/
-  raw/
-    raw_wdi_merged.csv       # Raw WDI API download (108 rows, 1970-2023)
-  processed/
-    cleaned_data.csv         # Cleaned panel dataset (108 rows, no missing values)
-documentation/
-  codebook.md                # Variable definitions, units, coverage, cleaning notes
-  entity_relationship_diagram.md
-figures/                     # Visual outputs organized by analysis type
-  economic_analysis/
-  health_analysis/
-  comparison_analysis/
-  relationship_analysis/
-scripts/
-  data_collection.py         # Fetch WDI data from World Bank API
-  data_cleaning.sql          # SQL cleaning script
-  economic_analysis.py
-  health_analysis.py
-  comparison_analysis.py
-  relationship_analysis.py
-.gitignore
-project-report.html
-project-report.pdf
-project-report.qmd           # Quarto
-README.md
+├── data/
+│   ├──raw/
+│   │   └──raw_wdi_merged.csv       # Raw WDI API download (108 rows, 1970-2023)
+│   └──processed/
+│   │   └── cleaned_data.csv         # Cleaned panel dataset (108 rows, no missing values)
+├── documentation/
+│   ├── codebook.md                # Variable definitions, units, coverage, cleaning notes
+│   └── entity_relationship_diagram.md
+├── figures/                     # Visual outputs organized by analysis type
+│    ├── economic_analysis/
+│    ├── health_analysis/
+│    ├── comparison_analysis/
+│    └── relationship_analysis/
+├── scripts/
+│   ├── data_collection.py         # Fetch WDI data from World Bank API
+│   ├── data_cleaning.sql          # SQL cleaning script
+│   ├── economic_analysis.py
+│   ├── health_analysis.py
+│   ├── comparison_analysis.py
+│   └── relationship_analysis.py
+└── .gitignore
+└── project-report.html
+└── project-report.pdf
+└── project-report.qmd           # Quarto
+└── README.md
 ```
 
 The `figures/` folder contains all visual outputs from the project, including:
