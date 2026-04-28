@@ -74,7 +74,7 @@ The `figures/` folder contains all visual outputs from the project, including:
 Install required packages:
 
 ```
-pip install pandas matplotlib
+pip install pandas matplotlib seaborn requests duckdb
 ```
 
 Run the analysis scripts:
