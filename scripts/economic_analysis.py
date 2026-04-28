@@ -45,7 +45,7 @@ def plot_gdp_per_capita(df):
     plt.legend(title='Country')
 
     plt.tight_layout()
-    plt.savefig('../figures/gdp_per_capita_trend.png', dpi=300)
+    plt.savefig('../figures/economic_analysis/gdp_per_capita_trend.png', dpi=300)
     plt.show()
 
 
@@ -67,7 +67,7 @@ def plot_gdp_growth(df):
     plt.legend(title='Country')
 
     plt.tight_layout()
-    plt.savefig('../figures/gdp_growth_trend.png', dpi=300)
+    plt.savefig('../figures/economic_analysis/gdp_growth_trend.png', dpi=300)
     plt.show()
 
 
