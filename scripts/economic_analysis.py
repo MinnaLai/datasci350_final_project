@@ -1,6 +1,12 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_PATH = BASE_DIR / "data" / "processed" / "cleaned_data.csv"
+FIGURES_DIR = BASE_DIR / "figures" / "economic_analysis"
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 # 1. Load and prepare data
 def load_data(filepath):
@@ -45,7 +51,7 @@ def plot_gdp_per_capita(df):
     plt.legend(title='Country')
 
     plt.tight_layout()
-    plt.savefig('../figures/economic_analysis/gdp_per_capita_trend.png', dpi=300)
+    plt.savefig(FIGURES_DIR / 'gdp_per_capita_trend.png', dpi=300)
     plt.show()
 
 
@@ -67,7 +73,7 @@ def plot_gdp_growth(df):
     plt.legend(title='Country')
 
     plt.tight_layout()
-    plt.savefig('../figures/economic_analysis/gdp_growth_trend.png', dpi=300)
+    plt.savefig(FIGURES_DIR / 'gdp_growth_trend.png', dpi=300)
     plt.show()
 
 
@@ -83,8 +89,7 @@ def summarize_data(df):
 def main():
     sns.set_style("whitegrid")  # nicer plot style
 
-    # IMPORTANT: correct path
-    df = load_data('../data/processed/cleaned_data.csv')
+    df = load_data(DATA_PATH)
 
     plot_gdp_per_capita(df)
     plot_gdp_growth(df)
